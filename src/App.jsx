@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import WhatsAppButton from './components/WhatsAppButton'
 import Footer from './components/Footer'
@@ -14,27 +14,36 @@ import ZiyaratTours from './pages/ZiyaratTours'
 import NikkahMasjids from './pages/NikkahMasjids'
 import Contact from './pages/Contact'
 
+function AppContent() {
+  const location = useLocation()
+  const hideNavAndFooter = location.pathname === '/umrah-packages'
+
+  return (
+    <div className="min-h-screen">
+      <AnimationEngine />
+      {!hideNavAndFooter && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/hajj-packages" element={<HajjPackages />} />
+        <Route path="/umrah-packages" element={<UmrahPackages />} />
+        <Route path="/umrah-india" element={<UmrahIndia />} />
+        <Route path="/umrah-uae" element={<UmrahUAE />} />
+        <Route path="/tailor-made" element={<TailorMade />} />
+        <Route path="/ziyarat-tours" element={<ZiyaratTours />} />
+        <Route path="/nikkah-masjids" element={<NikkahMasjids />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+      {!hideNavAndFooter && <Footer />}
+      {!hideNavAndFooter && <WhatsAppButton />}
+    </div>
+  )
+}
+
 export default function App() {
   return (
     <Router>
-      <div className="min-h-screen">
-        <AnimationEngine />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/hajj-packages" element={<HajjPackages />} />
-          <Route path="/umrah-packages" element={<UmrahPackages />} />
-          <Route path="/umrah-india" element={<UmrahIndia />} />
-          <Route path="/umrah-uae" element={<UmrahUAE />} />
-          <Route path="/tailor-made" element={<TailorMade />} />
-          <Route path="/ziyarat-tours" element={<ZiyaratTours />} />
-          <Route path="/nikkah-masjids" element={<NikkahMasjids />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-        <Footer />
-        <WhatsAppButton />
-      </div>
+      <AppContent />
     </Router>
   )
 }

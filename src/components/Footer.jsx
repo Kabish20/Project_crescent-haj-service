@@ -2,10 +2,8 @@ import { Link } from 'react-router-dom'
 
 const footerLinks = {
   'Packages': [
-    { label: 'Hajj Packages', path: '/hajj-packages' },
-    { label: 'Umrah from India', path: '/umrah-india' },
-    { label: 'Umrah from UAE', path: '/umrah-uae' },
-    { label: 'Tailor-Made Umrah', path: '/tailor-made' },
+    { label: 'Umrah Packages', path: '/umrah-packages' },
+    { label: 'Customized Umrah & Hajj', path: '/tailor-made' },
     { label: 'Ziyarat Tours', path: '/ziyarat-tours' },
   ],
   'Services': [
@@ -64,19 +62,24 @@ export default function Footer() {
               {heading}
             </h4>
             <ul className="space-y-2.5">
-              {links.map(link => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-sm font-body transition-all hover:pl-2 block"
-                    style={{color:'rgba(250,248,243,0.55)'}}
-                    onMouseEnter={e => e.target.style.color = 'var(--gold)'}
-                    onMouseLeave={e => e.target.style.color = 'rgba(250,248,243,0.55)'}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {links.map(link => {
+                const isExternal = link.path.startsWith('http');
+                const linkProps = isExternal ? { href: link.path } : { to: link.path };
+                const LinkComponent = isExternal ? 'a' : Link;
+                return (
+                  <li key={link.path}>
+                    <LinkComponent
+                      {...linkProps}
+                      className="text-sm font-body transition-all hover:pl-2 block"
+                      style={{color:'rgba(250,248,243,0.55)'}}
+                      onMouseEnter={e => e.target.style.color = 'var(--gold)'}
+                      onMouseLeave={e => e.target.style.color = 'rgba(250,248,243,0.55)'}
+                    >
+                      {link.label}
+                    </LinkComponent>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ))}

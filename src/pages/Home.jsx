@@ -396,7 +396,7 @@ export default function Home() {
             <div className="ring-deco absolute -inset-6 rounded-3xl" style={{ border: '1px solid rgba(201,168,76,0.2)' }} />
             <div className="ring-deco-2 absolute -inset-12 rounded-3xl" style={{ border: '1px solid rgba(201,168,76,0.1)' }} />
             <img
-              src="/founder.png"
+              src="/founder.jpeg"
               alt="Mohamed Mubarak A - Founder"
               className="relative rounded-2xl w-full max-w-sm mx-auto object-cover shadow-2xl hover-shimmer"
               style={{ border: '3px solid rgba(201,168,76,0.3)' }}

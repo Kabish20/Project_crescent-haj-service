@@ -7,13 +7,9 @@ const navLinks = [
   {
     label: 'Packages',
     dropdown: [
-      { label: 'Hajj Packages', path: '/hajj-packages' },
-      { label: 'Umrah from India', path: '/umrah-india' },
-      { label: 'Umrah from UAE', path: '/umrah-uae' },
-      { label: 'Tailor-Made Umrah', path: '/tailor-made' },
-      { label: 'All Packages', path: '/umrah-packages' },
+      { label: 'Umrah Packages', path: '/umrah-packages' },
+      { label: 'Customized Umrah & Hajj', path: '/tailor-made' },
     ]
-    
   },
   { label: 'Ziyarat', path: '/ziyarat-tours' },
   { label: 'Nikkah Services', path: '/nikkah-masjids' },
@@ -109,18 +105,23 @@ export default function Navbar() {
                         backdropFilter: 'blur(20px)',
                       }}
                     >
-                      {link.dropdown.map(item => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="block px-5 py-3 text-sm font-body font-medium transition-all"
-                          style={{color:'rgba(250,248,243,0.8)', borderBottom:'1px solid rgba(201,168,76,0.1)'}}
-                          onMouseEnter={e => { e.currentTarget.style.color = 'var(--gold)'; e.currentTarget.style.background = 'rgba(201,168,76,0.08)'; e.currentTarget.style.paddingLeft = '28px'; }}
-                          onMouseLeave={e => { e.currentTarget.style.color = 'rgba(250,248,243,0.8)'; e.currentTarget.style.background = 'transparent'; e.currentTarget.style.paddingLeft = '20px'; }}
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                      {link.dropdown.map(item => {
+                        const isExternal = item.path.startsWith('http');
+                        const linkProps = isExternal ? { href: item.path } : { to: item.path };
+                        const LinkComponent = isExternal ? 'a' : Link;
+                        return (
+                          <LinkComponent
+                            key={item.path}
+                            {...linkProps}
+                            className="block px-5 py-3 text-sm font-body font-medium transition-all"
+                            style={{color:'rgba(250,248,243,0.8)', borderBottom:'1px solid rgba(201,168,76,0.1)'}}
+                            onMouseEnter={e => { e.currentTarget.style.color = 'var(--gold)'; e.currentTarget.style.background = 'rgba(201,168,76,0.08)'; e.currentTarget.style.paddingLeft = '28px'; }}
+                            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(250,248,243,0.8)'; e.currentTarget.style.background = 'transparent'; e.currentTarget.style.paddingLeft = '20px'; }}
+                          >
+                            {item.label}
+                          </LinkComponent>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
@@ -262,20 +263,25 @@ export default function Navbar() {
                     }}
                   >
                     <div className="py-2 pl-2 space-y-0.5" style={{ background: 'rgba(201,168,76,0.04)', borderRadius: '8px', marginBottom: '4px' }}>
-                      {link.dropdown.map(item => (
-                        <Link
-                          key={item.path}
-                          to={item.path}
-                          className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-body transition-all"
-                          style={{ color: location.pathname === item.path ? 'var(--gold)' : 'rgba(250,248,243,0.65)' }}
-                          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.08)'; e.currentTarget.style.color = 'var(--gold)'; }}
-                          onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = location.pathname === item.path ? 'var(--gold)' : 'rgba(250,248,243,0.65)'; }}
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          <span className="w-1 h-1 rounded-full shrink-0" style={{ background: 'var(--gold)', opacity: 0.5 }} />
-                          {item.label}
-                        </Link>
-                      ))}
+                      {link.dropdown.map(item => {
+                        const isExternal = item.path.startsWith('http');
+                        const linkProps = isExternal ? { href: item.path } : { to: item.path };
+                        const LinkComponent = isExternal ? 'a' : Link;
+                        return (
+                          <LinkComponent
+                            key={item.path}
+                            {...linkProps}
+                            className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-body transition-all"
+                            style={{ color: location.pathname === item.path ? 'var(--gold)' : 'rgba(250,248,243,0.65)' }}
+                            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.08)'; e.currentTarget.style.color = 'var(--gold)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = location.pathname === item.path ? 'var(--gold)' : 'rgba(250,248,243,0.65)'; }}
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            <span className="w-1 h-1 rounded-full shrink-0" style={{ background: 'var(--gold)', opacity: 0.5 }} />
+                            {item.label}
+                          </LinkComponent>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
