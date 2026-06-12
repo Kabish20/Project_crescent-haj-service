@@ -419,31 +419,61 @@ export default function Home() {
         <div className="absolute -right-32 -top-32 w-96 h-96 rounded-full ring-deco" style={{ border: '1px solid rgba(201,168,76,0.08)' }} />
         <div className="absolute -left-20 -bottom-20 w-72 h-72 rounded-full ring-deco-2" style={{ border: '1px solid rgba(13,74,58,0.15)' }} />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <div className="relative z-10 max-w-full mx-auto px-6 overflow-hidden">
           <SectionHeader light eyebrow="Pilgrim Stories" title="Words from Our Pilgrims" subtitle="Real reviews and feedback from our blessed travelers" />
           
-          <div className="flex overflow-x-auto gap-6 py-6 px-2 scrollbar-none snap-x snap-mandatory justify-start lg:justify-center">
-            {[
-              'f8Pzcr0zpwI',
-              'eAEx1n9mPzw',
-              'zg7POFTSxMs',
-              'gfZ4CFWJohs',
-              'jjdb6Q3_5RA'
-            ].map((id, idx) => (
-              <div
-                key={id}
-                className="snap-center shrink-0 w-[240px] md:w-[260px] aspect-9/16 rounded-3xl overflow-hidden glass-card animated-border shadow-2xl group transition-all duration-300 hover:scale-[1.03]"
-              >
-                <iframe
-                  src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
-                  title={`Crescent Haj Service Customer Review ${idx + 1}`}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="w-full h-full rounded-3xl bg-black"
-                ></iframe>
-              </div>
-            ))}
+          <div className="relative w-full overflow-hidden py-4">
+            {/* Left and Right fading overlays for premium look */}
+            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-linear-to-r from-(--dark-bg) to-transparent z-20 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-linear-to-l from-(--dark-bg) to-transparent z-20 pointer-events-none" />
+
+            <div className="flex animate-marquee">
+              {/* First set of videos */}
+              {[
+                'f8Pzcr0zpwI',
+                'eAEx1n9mPzw',
+                'zg7POFTSxMs',
+                'gfZ4CFWJohs',
+                'jjdb6Q3_5RA'
+              ].map((id, idx) => (
+                <div
+                  key={`v1-${id}`}
+                  className="shrink-0 w-[150px] md:w-[180px] aspect-9/16 rounded-2xl overflow-hidden glass-card animated-border shadow-lg group transition-transform duration-300 hover:scale-105 mr-6"
+                >
+                  <iframe
+                    src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
+                    title={`Crescent Haj Service Customer Review ${idx + 1}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full rounded-2xl bg-black"
+                  ></iframe>
+                </div>
+              ))}
+
+              {/* Duplicate set for seamless looping */}
+              {[
+                'f8Pzcr0zpwI',
+                'eAEx1n9mPzw',
+                'zg7POFTSxMs',
+                'gfZ4CFWJohs',
+                'jjdb6Q3_5RA'
+              ].map((id, idx) => (
+                <div
+                  key={`v2-${id}`}
+                  className="shrink-0 w-[150px] md:w-[180px] aspect-9/16 rounded-2xl overflow-hidden glass-card animated-border shadow-lg group transition-transform duration-300 hover:scale-105 mr-6"
+                >
+                  <iframe
+                    src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
+                    title={`Crescent Haj Service Customer Review Duplicate ${idx + 1}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="w-full h-full rounded-2xl bg-black"
+                  ></iframe>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
