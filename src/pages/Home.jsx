@@ -31,12 +31,6 @@ const journeySteps = [
   { icon: '🏠', title: 'Safe Return', desc: '24/7 support until you are home' },
 ]
 
-const testimonials = [
-  { name: 'Amina Fathima', city: 'Trichy', text: 'Alhamdulillah, the most well-organised Umrah trip. Every detail was handled with sincerity. I felt at complete peace throughout the journey.', rating: 5 },
-  { name: 'Abdul Rahman', city: 'Chennai', text: 'The team\'s dedication is unmatched. From visa to Ziyarat, everything was perfect. Our family was taken care of like their own.', rating: 5 },
-  { name: 'Sameera Begum', city: 'Dubai', text: 'Booked Umrah from UAE — seamless process, excellent hotels, very affordable. Jazakallah khair to the entire Crescent team.', rating: 5 },
-  { name: 'Mohamed Ismail', city: 'Coimbatore', text: 'I completed my Hajj with Crescent Haj Service. SubhanAllah, they handled everything beautifully. Highly recommend to everyone.', rating: 5 },
-]
 
 /* ── Canvas constellation ── */
 function useConstellationCanvas(canvasRef) {
@@ -130,7 +124,6 @@ function useParallax() {
 
 export default function Home() {
   useReveal()
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [particles, setParticles] = useState([])
   const canvasRef = useRef(null)
   const { pos, ref: heroRef } = useParallax()
@@ -147,8 +140,6 @@ export default function Home() {
       size: 1.5 + Math.random() * 3.5,
       variant: i % 2 === 0 ? 'star-a' : 'star-b',
     })))
-    const timer = setInterval(() => setCurrentTestimonial(p => (p + 1) % testimonials.length), 5000)
-    return () => clearInterval(timer)
   }, [])
 
   return (
@@ -422,40 +413,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ── */}
+      {/* ── TESTIMONIALS & VIDEO REVIEWS ── */}
       <section className="py-24 relative overflow-hidden" style={{ background: 'var(--dark-bg)' }}>
         {/* Decorative rings */}
         <div className="absolute -right-32 -top-32 w-96 h-96 rounded-full ring-deco" style={{ border: '1px solid rgba(201,168,76,0.08)' }} />
         <div className="absolute -left-20 -bottom-20 w-72 h-72 rounded-full ring-deco-2" style={{ border: '1px solid rgba(13,74,58,0.15)' }} />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <SectionHeader light eyebrow="Pilgrim Stories" title="Words from Our Pilgrims" />
-          <div className="tilt-card hover-shimmer glass-card p-10 text-center reveal animated-border">
-            <div className="tilt-shine" />
-            <div className="flex justify-center mb-4">
-              {Array.from({ length: testimonials[currentTestimonial].rating }).map((_, i) => (
-                <span key={i} className="text-xl animate-enter-scale" style={{ color: 'var(--gold)', animationDelay: `${i * 0.07}s` }}>★</span>
-              ))}
-            </div>
-            <p className="font-heading text-xl italic mb-6 leading-relaxed" style={{ color: 'rgba(250,248,243,0.85)' }}>
-              "{testimonials[currentTestimonial].text}"
-            </p>
-            <p className="font-body font-bold" style={{ color: 'var(--gold)' }}>{testimonials[currentTestimonial].name}</p>
-            <p className="font-body text-sm" style={{ color: 'rgba(250,248,243,0.45)' }}>{testimonials[currentTestimonial].city}</p>
-            <div className="flex justify-center gap-2 mt-6">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentTestimonial(i)}
-                  className="rounded-full transition-all duration-400"
-                  style={{
-                    background: i === currentTestimonial ? 'var(--gold)' : 'rgba(201,168,76,0.25)',
-                    width: i === currentTestimonial ? '24px' : '8px',
-                    height: '8px',
-                  }}
-                />
-              ))}
-            </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
+          <SectionHeader light eyebrow="Pilgrim Stories" title="Words from Our Pilgrims" subtitle="Real reviews and feedback from our blessed travelers" />
+          
+          <div className="flex overflow-x-auto gap-6 py-6 px-2 scrollbar-none snap-x snap-mandatory justify-start lg:justify-center">
+            {[
+              'f8Pzcr0zpwI',
+              'eAEx1n9mPzw',
+              'zg7POFTSxMs',
+              'gfZ4CFWJohs',
+              'jjdb6Q3_5RA'
+            ].map((id, idx) => (
+              <div
+                key={id}
+                className="snap-center shrink-0 w-[240px] md:w-[260px] aspect-9/16 rounded-3xl overflow-hidden glass-card animated-border shadow-2xl group transition-all duration-300 hover:scale-[1.03]"
+              >
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
+                  title={`Crescent Haj Service Customer Review ${idx + 1}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full rounded-3xl bg-black"
+                ></iframe>
+              </div>
+            ))}
           </div>
         </div>
       </section>
