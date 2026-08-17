@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const footerLinks = {
   'Packages': [
     { label: 'Umrah Packages', path: '/umrah-packages' },
-    { label: 'Customized Umrah & Hajj', path: '/tailor-made' },
+    { label: 'Customized Umrah & Hajj', path: '/customizedumrah' },
     { label: 'Ziyarat Tours', path: '/ziyarat-tours' },
   ],
   'Services': [

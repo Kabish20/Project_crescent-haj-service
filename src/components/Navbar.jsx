@@ -8,7 +8,7 @@ const navLinks = [
     label: 'Packages',
     dropdown: [
       { label: 'Umrah Packages', path: '/umrah-packages' },
-      { label: 'Customized Umrah & Hajj', path: '/tailor-made' },
+      { label: 'Customized Umrah & Hajj', path: '/customizedumrah' },
     ]
   },
   { label: 'Ziyarat', path: '/ziyarat-tours' },

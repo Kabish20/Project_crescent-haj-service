@@ -17,6 +17,7 @@ import Contact from './pages/Contact'
 
 function AppContent() {
   const location = useLocation()
+  const isUmrahListingsPage = location.pathname === '/umrah-packages'
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -25,7 +26,7 @@ function AppContent() {
   return (
     <div className="min-h-screen">
       <AnimationEngine />
-      <Navbar />
+      {!isUmrahListingsPage && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -34,12 +35,13 @@ function AppContent() {
         <Route path="/umrah-india" element={<UmrahIndia />} />
         <Route path="/umrah-uae" element={<UmrahUAE />} />
         <Route path="/tailor-made" element={<TailorMade />} />
+        <Route path="/customizedumrah" element={<TailorMade />} />
         <Route path="/ziyarat-tours" element={<ZiyaratTours />} />
         <Route path="/nikkah-masjids" element={<NikkahMasjids />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer />
-      <WhatsAppButton />
+      {!isUmrahListingsPage && <Footer />}
+      {!isUmrahListingsPage && <WhatsAppButton />}
     </div>
   )
 }

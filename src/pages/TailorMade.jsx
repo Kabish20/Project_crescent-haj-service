@@ -23,7 +23,7 @@ export default function TailorMade() {
   useReveal()
   const [form, setForm] = useState({ name: '', phone: '', from: '', pilgrims: '', month: '', hotel: '', budget: '', notes: '' })
   const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
-  const whatsappMsg = `Hi, I want a Tailor-Made Umrah Package.\n\nName: ${form.name}\nFrom: ${form.from}\nPilgrims: ${form.pilgrims}\nMonth: ${form.month}\nHotel: ${form.hotel}\nBudget: ${form.budget}\nNotes: ${form.notes}`
+  const whatsappMsg = `Hi, I want a Customized Umrah Package.\n\nName: ${form.name}\nFrom: ${form.from}\nPilgrims: ${form.pilgrims}\nMonth: ${form.month}\nHotel: ${form.hotel}\nBudget: ${form.budget}\nNotes: ${form.notes}`
 
   return (
     <div>
@@ -37,10 +37,10 @@ export default function TailorMade() {
             ✦ Your Pilgrimage, Your Way
           </span>
           <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6" style={{ color: 'var(--pearl)' }}>
-            Tailor-Made Umrah
+            Customized Umrah
           </h1>
           <p className="font-body text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(250,248,243,0.7)' }}>
-            A completely customized, private Umrah experience designed exclusively around your dates, your family's needs, and your budget — with zero compromises.
+            A private Umrah experience designed around your dates, your family’s needs, and your budget — with every detail planned personally for you.
           </p>
         </div>
       </div>
@@ -107,7 +107,7 @@ export default function TailorMade() {
               style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', color: 'var(--gold)' }}>
               Get a Custom Quote
             </span>
-            <h2 className="font-heading text-4xl font-bold mb-3" style={{ color: 'var(--pearl)' }}>Build Your Umrah Package</h2>
+            <h2 className="font-heading text-4xl font-bold mb-3" style={{ color: 'var(--pearl)' }}>Build Your Customized Umrah</h2>
             <GoldDivider />
             <p className="font-body text-sm mt-4" style={{ color: 'rgba(250,248,243,0.5)' }}>
               Fill in your preferences and our team will craft a personalised itinerary — usually within 4 hours

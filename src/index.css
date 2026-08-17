@@ -35,6 +35,26 @@
   h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
   }
+
+  .umrah-listing-page {
+    width: 100%;
+    min-height: 100svh;
+    background: #fff;
+  }
+
+  .umrah-listing-frame {
+    display: block;
+    width: 100%;
+    height: 100svh;
+    min-height: 720px;
+    border: 0;
+  }
+
+  @media (max-width: 640px) {
+    .umrah-listing-frame {
+      min-height: 100svh;
+    }
+  }
 }
 
 ::selection { color: var(--dark-bg); background: var(--gold-light); }
