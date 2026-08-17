@@ -60,7 +60,7 @@ export default function UmrahUAE() {
             Fast-track visa processing, luxury weekend getaways, and flexible road or air travel options — specifically designed for expats, residents, and families of the United Arab Emirates.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <a href="https://wa.me/916382220393?text=I%20want%20details%20about%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918110082222?text=I%20want%20details%20about%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
               className="btn-gold px-8 py-3.5 rounded-full font-body font-bold text-sm">
               Get UAE Package
             </a>
@@ -112,7 +112,7 @@ export default function UmrahUAE() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://wa.me/916382220393?text=I%20want%20details%20on%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/918110082222?text=I%20want%20details%20on%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
                   className="mt-6 btn-emerald w-full py-3 rounded-full font-body font-bold text-sm text-center block">
                   Enquire Now
                 </a>
@@ -165,7 +165,7 @@ export default function UmrahUAE() {
                     </li>
                   ))}
                 </ul>
-                <a href="https://wa.me/916382220393?text=I%20want%20details%20on%20the%20Weekend%20Executive%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/918110082222?text=I%20want%20details%20on%20the%20Weekend%20Executive%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
                   className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm inline-block">
                   Get Full Package Details
                 </a>
@@ -230,7 +230,7 @@ export default function UmrahUAE() {
             Fast visa. Premium hotels. Hassle-free journey. Contact us now — it's free.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/916382220393?text=I%20want%20to%20book%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918110082222?text=I%20want%20to%20book%20Umrah%20from%20UAE" target="_blank" rel="noopener noreferrer"
               className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm">
               WhatsApp Now
             </a>

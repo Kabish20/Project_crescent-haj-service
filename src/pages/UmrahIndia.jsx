@@ -84,7 +84,7 @@ export default function UmrahIndia() {
             Complete end-to-end Umrah packages departing from major Indian cities, designed specifically for Indian pilgrims — with native language guides, familiar cuisine, and seamless visa processing.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <a href="https://wa.me/916382220393?text=I%20want%20details%20about%20Umrah%20from%20India" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918110082222?text=I%20want%20details%20about%20Umrah%20from%20India" target="_blank" rel="noopener noreferrer"
               className="btn-gold px-8 py-3.5 rounded-full font-body font-bold text-sm">
               Get Package Details
             </a>
@@ -166,7 +166,7 @@ export default function UmrahIndia() {
                   <div className="text-right">
                     <span className="text-xs font-bold px-2 py-1 rounded" style={{ background: 'rgba(201,168,76,0.1)', color: 'var(--gold)' }}>{d.freq}</span>
                     <div className="mt-1">
-                      <a href={`https://wa.me/916382220393?text=Enquiry%20for%20Umrah%20from%20${d.city}`} target="_blank" rel="noopener noreferrer"
+                      <a href={`https://wa.me/918110082222?text=Enquiry%20for%20Umrah%20from%20${d.city}`} target="_blank" rel="noopener noreferrer"
                         className="text-xs font-bold underline" style={{ color: 'var(--emerald)' }}>
                         Book Seat
                       </a>
@@ -208,7 +208,7 @@ export default function UmrahIndia() {
             Speak to a pilgrimage advisor today. Free consultation, no commitment.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="https://wa.me/916382220393?text=I%20want%20details%20about%20Umrah%20packages%20from%20India" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918110082222?text=I%20want%20details%20about%20Umrah%20packages%20from%20India" target="_blank" rel="noopener noreferrer"
               className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm">
               WhatsApp Now
             </a>

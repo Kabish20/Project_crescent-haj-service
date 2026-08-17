@@ -77,7 +77,7 @@ export default function HajjPackages() {
                 {h.popular && <div className="text-xs font-body font-bold uppercase tracking-wider mb-4" style={{ color: 'var(--gold)' }}>✦ Recommended for Intl. Pilgrims</div>}
                 <h3 className="font-heading text-2xl font-bold mb-4" style={{ color: h.popular ? 'var(--gold)' : 'var(--emerald)' }}>{h.type}</h3>
                 <p className="font-body text-sm leading-relaxed mb-8" style={{ color: h.popular ? 'rgba(250,248,243,0.8)' : 'rgba(26,26,26,0.7)' }}>{h.desc}</p>
-                <a href="https://wa.me/916382220393" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/918110082222" target="_blank" rel="noopener noreferrer"
                   className={`block text-center py-3 px-6 rounded-full font-body font-bold text-sm transition-transform hover:-translate-y-1 ${h.popular ? 'btn-gold' : 'btn-emerald'}`}>
                   Enquire Now
                 </a>
@@ -126,7 +126,7 @@ export default function HajjPackages() {
               <Link to="/contact" className="btn-emerald px-10 py-4 rounded-full font-body font-bold text-sm">
                 Request a Call Back
               </Link>
-              <a href="https://wa.me/916382220393?text=I%20want%20to%20enquire%20about%20detailed%20Hajj%20packages" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918110082222?text=I%20want%20to%20enquire%20about%20detailed%20Hajj%20packages" target="_blank" rel="noopener noreferrer"
                 className="btn-gold px-10 py-4 rounded-full font-body font-bold text-sm inline-flex items-center gap-2">
                 Get Hajj Details on WhatsApp
               </a>

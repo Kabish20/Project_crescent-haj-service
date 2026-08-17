@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import WhatsAppButton from './components/WhatsAppButton'
 import Footer from './components/Footer'
@@ -16,12 +17,15 @@ import Contact from './pages/Contact'
 
 function AppContent() {
   const location = useLocation()
-  const hideNavAndFooter = location.pathname === '/umrah-packages'
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [location.pathname])
 
   return (
     <div className="min-h-screen">
       <AnimationEngine />
-      {!hideNavAndFooter && <Navbar />}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -34,8 +38,8 @@ function AppContent() {
         <Route path="/nikkah-masjids" element={<NikkahMasjids />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      {!hideNavAndFooter && <Footer />}
-      {!hideNavAndFooter && <WhatsAppButton />}
+      <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

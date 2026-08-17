@@ -243,7 +243,7 @@ export default function Home() {
                 View Packages
               </Link>
               <a
-                href="https://wa.me/916382220393"
+                href="https://wa.me/918110082222"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="magnetic-btn flex items-center gap-2 px-6 py-4 rounded-full font-body font-bold text-sm transition-all"
@@ -390,7 +390,7 @@ export default function Home() {
               src="/founder.jpeg"
               alt="Mohamed Mubarak A - Founder"
               className="relative rounded-2xl w-full max-w-sm mx-auto object-cover shadow-2xl hover-shimmer"
-              style={{ border: '3px solid rgba(201,168,76,0.3)' }}
+              style={{ border: '3px solid rgba(201,168,76,0.3)', aspectRatio: '4 / 5', objectPosition: 'center top' }}
             />
           </div>
           <div className="reveal-right">
@@ -427,8 +427,9 @@ export default function Home() {
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-linear-to-r from-(--dark-bg) to-transparent z-20 pointer-events-none" />
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-linear-to-l from-(--dark-bg) to-transparent z-20 pointer-events-none" />
 
-            <div className="flex animate-marquee">
-              {/* First set of videos */}
+            <div className="flex justify-center">
+              {/* Render each review once. Duplicating this set makes the same videos
+                  appear twice in the carousel. */}
               {[
                 'f8Pzcr0zpwI',
                 'eAEx1n9mPzw',
@@ -443,29 +444,6 @@ export default function Home() {
                   <iframe
                     src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
                     title={`Crescent Haj Service Customer Review ${idx + 1}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    className="w-full h-full rounded-2xl bg-black"
-                  ></iframe>
-                </div>
-              ))}
-
-              {/* Duplicate set for seamless looping */}
-              {[
-                'f8Pzcr0zpwI',
-                'eAEx1n9mPzw',
-                'zg7POFTSxMs',
-                'gfZ4CFWJohs',
-                'jjdb6Q3_5RA'
-              ].map((id, idx) => (
-                <div
-                  key={`v2-${id}`}
-                  className="shrink-0 w-[150px] md:w-[180px] aspect-9/16 rounded-2xl overflow-hidden glass-card animated-border shadow-lg group transition-transform duration-300 hover:scale-105 mr-6"
-                >
-                  <iframe
-                    src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
-                    title={`Crescent Haj Service Customer Review Duplicate ${idx + 1}`}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
@@ -516,7 +494,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="magnetic-btn btn-emerald px-8 py-4 rounded-full font-body text-sm">Plan My Pilgrimage</Link>
-            <a href="https://wa.me/916382220393" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918110082222" target="_blank" rel="noopener noreferrer"
               className="magnetic-btn btn-gold px-8 py-4 rounded-full font-body font-bold text-sm">WhatsApp Now</a>
           </div>
         </div>

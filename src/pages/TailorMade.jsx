@@ -151,11 +151,11 @@ export default function TailorMade() {
                 style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.2)', color: 'var(--pearl)' }} />
             </div>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <a href={`https://wa.me/916382220393?text=${encodeURIComponent(whatsappMsg)}`} target="_blank" rel="noopener noreferrer"
+                <a href={`https://wa.me/918110082222?text=${encodeURIComponent(whatsappMsg)}`} target="_blank" rel="noopener noreferrer"
                 className="btn-gold flex-1 py-4 rounded-full font-body font-bold text-sm text-center">
                 📱 Send via WhatsApp
               </a>
-              <a href="tel:+916382220393" className="btn-ghost flex-1 py-4 rounded-full font-body font-bold text-sm text-center">
+              <a href="tel:+918110082222" className="btn-ghost flex-1 py-4 rounded-full font-body font-bold text-sm text-center">
                 📞 Call Advisor Directly
               </a>
             </div>

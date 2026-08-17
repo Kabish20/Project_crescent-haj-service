@@ -2,7 +2,7 @@ export default function WhatsAppButton() {
   return (
     <a
       id="whatsapp-sticky-btn"
-      href="https://wa.me/916382220393?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Hajj%20and%20Umrah%20packages."
+      href="https://wa.me/918110082222?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20Hajj%20and%20Umrah%20packages."
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-btn w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform"

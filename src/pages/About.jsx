@@ -18,7 +18,7 @@ const milestones = [
 ]
 
 const team = [
-  { name: 'Mohamed Mubarak A', role: 'Founder & Director', bio: 'With over 15 years in pilgrimage services, Mubarak founded Crescent in 2009 driven by a personal mission to make Hajj and Umrah accessible to all Muslims with sincerity and care.', img: '/founder.png' },
+  { name: 'Mohamed Mubarak A', role: 'Founder & Director', bio: 'With over 15 years in pilgrimage services, Mubarak founded Crescent in 2009 driven by a personal mission to make Hajj and Umrah accessible to all Muslims with sincerity and care.', img: '/founder.jpeg' },
 ]
 
 export default function About() {
@@ -66,7 +66,7 @@ export default function About() {
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <div className="reveal-left relative">
             <div className="absolute -inset-4 rounded-3xl" style={{ background: 'var(--gold)', opacity: 0.08, transform: 'rotate(-3deg)' }}></div>
-            <img src="/founder.png" alt="Mohamed Mubarak A - Founder of Crescent Haj Service" className="relative rounded-3xl shadow-2xl w-full max-w-sm mx-auto object-cover" style={{ border: '3px solid rgba(201,168,76,0.3)' }} />
+            <img src="/founder.jpeg" alt="Mohamed Mubarak A - Founder of Crescent Haj Service" className="relative rounded-3xl shadow-2xl w-full max-w-sm mx-auto object-cover" style={{ border: '3px solid rgba(201,168,76,0.3)', aspectRatio: '4 / 5', objectPosition: 'center top' }} />
             <div className="mt-6 text-center">
               <p className="font-heading text-2xl font-bold" style={{ color: 'var(--emerald)' }}>Mohamed Mubarak A</p>
               <p className="font-body text-sm uppercase tracking-widest mt-1" style={{ color: 'var(--gold)' }}>Founder & Director</p>
@@ -206,7 +206,7 @@ export default function About() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="btn-emerald px-8 py-4 rounded-full font-body text-sm font-bold">Plan My Pilgrimage</Link>
-            <a href="https://wa.me/916382220393" target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm">WhatsApp Now</a>
+            <a href="https://wa.me/918110082222" target="_blank" rel="noopener noreferrer" className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm">WhatsApp Now</a>
           </div>
         </div>
       </section>

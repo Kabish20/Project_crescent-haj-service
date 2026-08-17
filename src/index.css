@@ -29,11 +29,46 @@
     background-color: var(--pearl);
     color: var(--charcoal);
     overflow-x: hidden;
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', serif;
   }
+}
+
+::selection { color: var(--dark-bg); background: var(--gold-light); }
+
+:focus-visible { outline: 3px solid var(--gold-light); outline-offset: 4px; }
+
+img { max-width: 100%; }
+
+.page-hero { position: relative; overflow: hidden; }
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.28;
+  background-image: radial-gradient(circle at 20% 20%, rgba(201,168,76,0.18) 0 1px, transparent 1.5px), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0 1px, transparent 1.5px);
+  background-size: 90px 90px, 120px 120px;
+}
+
+.footer-grid > * { min-width: 0; }
+.footer-contact-copy { overflow-wrap: anywhere; }
+.footer-label { color: rgba(250,248,243,0.42); font-size: 0.78rem; }
+.footer-social { width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(201,168,76,0.25); border-radius: 10px; color: rgba(250,248,243,0.62); background: rgba(201,168,76,0.06); transition: color .25s ease, background .25s ease, border-color .25s ease, transform .25s ease; }
+.footer-social svg { width: 18px; height: 18px; }
+.footer-social:hover { color: var(--gold-light); background: rgba(201,168,76,0.14); border-color: rgba(201,168,76,0.6); transform: translateY(-2px); }
+
+section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
+
+@media (min-width: 1024px) {
+  .footer-grid { grid-template-columns: minmax(220px, 1.2fr) minmax(150px, 0.9fr) minmax(150px, 0.9fr) minmax(300px, 1.45fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
 /* ─── Custom Scrollbar ─── */
@@ -836,5 +871,3 @@ body.menu-open {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
-
-

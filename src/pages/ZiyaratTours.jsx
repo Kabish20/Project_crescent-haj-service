@@ -99,7 +99,7 @@ export default function ZiyaratTours() {
             <p className="font-body text-base max-w-3xl mx-auto leading-relaxed mb-8" style={{ color: 'rgba(26,26,26,0.7)' }}>
               For pilgrims wanting a deeper exploration, we offer extended day trips. Visit the city of <strong>Taif</strong>, where the Prophet (ﷺ) faced his hardest trials and experience the historical Mosque of Addas. Alternatively, join our emotional tour to <strong>Badr</strong>, the site of the pivotal first battle of Islam, to witness the terrain where angels descended to aid the believers.
             </p>
-            <a href="https://wa.me/916382220393?text=I%20want%20to%20book%20a%20Ziyarat%20tour%20including%20Taif/Badr" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918110082222?text=I%20want%20to%20book%20a%20Ziyarat%20tour%20including%20Taif/Badr" target="_blank" rel="noopener noreferrer"
               className="btn-gold px-10 py-4 rounded-full font-body font-bold text-sm inline-block shadow-xl">
               Book Extended Ziyarat
             </a>

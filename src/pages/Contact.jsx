@@ -28,9 +28,11 @@ export default function Contact() {
             </p>
 
             {[
-              { icon: '📞', label: 'Phone / WhatsApp', value: '+91 638 222 0393', href: 'tel:+916382220393' },
+              { icon: '📞', label: 'Phone / WhatsApp', value: '+91 8110082222', href: 'tel:+918110082222' },
               { icon: '📧', label: 'Email', value: 'crescenthajservice@gmail.com', href: 'mailto:crescenthajservice@gmail.com' },
-              { icon: '📍', label: 'Office', value: '#5, Ground Floor, Crescent Park Apartment, Hazrath Sulaiman Street, Kaja Nagar, Trichy - 620020 Tamilnadu, India.', href: null },
+              { icon: '📍', label: 'Trichy Head Office', value: '5, Crescent Park Apartment, Hazrath Sulaiman Street, Kaja Nagar, Trichy – 620020', href: null },
+              { icon: '📍', label: 'Mahabubnagar Regional Office', value: '#5-3-21/5/3, Plot No: 2, Behind Ali\'s Mart, Z&Z Colony, Raichur Road, Mahabubnagar – 509 001, Telangana', href: null },
+              { icon: '🇸🇦', label: 'Jeddah Saudi Operations', value: '8807, Prince Majid Street, 2104, Al Aziziyah Dist., 23342, Jeddah, Kingdom of Saudi Arabia', href: null },
               { icon: '🕐', label: 'Working Hours', value: 'Mon–Sat: 9am – 7pm', href: null },
             ].map(c => (
               <div key={c.label} className="flex gap-4 glass-card-light p-4 rounded-2xl reveal">
@@ -43,7 +45,7 @@ export default function Contact() {
               </div>
             ))}
 
-            <a href="https://wa.me/916382220393" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/918110082222" target="_blank" rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 py-4 rounded-2xl font-body font-bold text-sm reveal"
               style={{ background: 'linear-gradient(135deg, #25D366, #128C7E)', color: 'white' }}>
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -93,11 +95,11 @@ export default function Contact() {
                 style={{ border: '1px solid rgba(13,74,58,0.2)', background: 'rgba(13,74,58,0.02)', color: 'var(--charcoal)' }} />
             </div>
             <div className="flex flex-wrap gap-4 mt-6">
-              <a href={`https://wa.me/916382220393?text=${encodeURIComponent(msg)}`} target="_blank" rel="noopener noreferrer"
+              <a href={`https://wa.me/918110082222?text=${encodeURIComponent(msg)}`} target="_blank" rel="noopener noreferrer"
                 className="btn-gold flex-1 py-3.5 rounded-full font-body font-bold text-sm text-center">
                 Submit via WhatsApp
               </a>
-              <a href="tel:+916382220393" className="btn-emerald flex-1 py-3.5 rounded-full font-body font-bold text-sm text-center">
+              <a href="tel:+918110082222" className="btn-emerald flex-1 py-3.5 rounded-full font-body font-bold text-sm text-center">
                 Call Now
               </a>
             </div>

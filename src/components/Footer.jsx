@@ -27,7 +27,7 @@ export default function Footer() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://wa.me/916382220393"
+              href="https://wa.me/918110082222"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold px-8 py-3 rounded-full font-body font-bold text-sm"
@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="footer-grid max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 items-start">
         {/* Brand */}
         <div>
           <div className="mb-5">
@@ -53,6 +53,23 @@ export default function Footer() {
           </p>
           <p className="text-xs font-body font-semibold tracking-widest uppercase mb-2" style={{color:'var(--gold)'}}>Serving Since</p>
           <p className="font-heading text-3xl font-bold" style={{color:'rgba(250,248,243,0.9)'}}>2009</p>
+          <div className="mt-7">
+            <p className="text-xs font-body font-bold uppercase tracking-widest mb-3" style={{color:'var(--gold)'}}>Follow Our Journey</p>
+            <div className="flex items-center gap-2.5">
+              <a href="https://www.youtube.com/@CRESCENTHAJSERVICE/featured" target="_blank" rel="noopener noreferrer"
+                className="footer-social" aria-label="Crescent Haj Service on YouTube" title="YouTube">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" /></svg>
+              </a>
+              <a href="https://www.instagram.com/crescenthaj/?hl=en" target="_blank" rel="noopener noreferrer"
+                className="footer-social" aria-label="Crescent Haj Service on Instagram" title="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://www.facebook.com/CrescentHaj/" target="_blank" rel="noopener noreferrer"
+                className="footer-social" aria-label="Crescent Haj Service on Facebook" title="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.8l.4-3h-3.2V8.1c0-.9.3-1.6 1.7-1.6h1.8V3.8c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.5v3H10v8h3.5Z"/></svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Links */}
@@ -97,9 +114,11 @@ export default function Footer() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
                 </svg>
               </div>
-              <p className="text-sm font-body" style={{color:'rgba(250,248,243,0.55)'}}>
-                #5, Ground Floor, Crescent Park Apartment, Hazrath Sulaiman Street, Kaja Nagar, Trichy - 620020 Tamilnadu, India.
-              </p>
+              <div className="text-sm font-body leading-relaxed" style={{color:'rgba(250,248,243,0.55)'}}>
+                <p><strong style={{color:'rgba(250,248,243,0.8)'}}>Trichy, India</strong><br />Head Office<br />5, Crescent Park Apartment, Hazrath Sulaiman Street, Kaja Nagar, Trichy – 620020</p>
+                <p className="mt-3"><strong style={{color:'rgba(250,248,243,0.8)'}}>Mahabubnagar, India</strong><br />Regional Office<br />#5-3-21/5/3, Plot No: 2, Behind Ali's Mart, Z&amp;Z Colony, Raichur Road, Mahabubnagar – 509 001, Telangana</p>
+                <p className="mt-3"><strong style={{color:'rgba(250,248,243,0.8)'}}>Jeddah, Saudi Arabia</strong><br />Saudi Operations<br />8807, Prince Majid Street, 2104, Al Aziziyah Dist., 23342, Jeddah</p>
+              </div>
             </div>
             <div className="flex gap-3">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{background:'rgba(201,168,76,0.1)', border:'1px solid rgba(201,168,76,0.2)'}}>
@@ -108,7 +127,7 @@ export default function Footer() {
                 </svg>
               </div>
               <div className="text-sm font-body" style={{color:'rgba(250,248,243,0.55)'}}>
-                <p>+91 638 222 0393</p>
+                <p>+91 8110082222</p>
                 <p className="text-xs mt-0.5" style={{color:'rgba(201,168,76,0.6)'}}>WhatsApp Available</p>
               </div>
             </div>

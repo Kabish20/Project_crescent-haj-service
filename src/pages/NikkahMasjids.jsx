@@ -96,7 +96,7 @@ export default function NikkahMasjids() {
           <div className="mt-16 text-center reveal">
             <h2 className="font-heading text-3xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>Start Planning Your Blessed Day</h2>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://wa.me/916382220393?text=I%20would%20like%20to%20consult%20about%20arranging%20a%20Nikkah%20in%20Makkah/Madinah" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918110082222?text=I%20would%20like%20to%20consult%20about%20arranging%20a%20Nikkah%20in%20Makkah/Madinah" target="_blank" rel="noopener noreferrer"
                 className="btn-gold px-10 py-4 rounded-full font-body font-bold text-sm inline-block shadow-xl">
                 Consult on WhatsApp
               </a>
