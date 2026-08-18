@@ -132,8 +132,8 @@ section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
 .journey-card p { min-height: 55px; color: rgba(255,255,255,.68); font: 13px/1.55 'Manrope', sans-serif; }
 .journey-card b { display: flex; gap: 7px; align-items: center; margin-top: 18px; color: #fff; font: 700 10px 'Manrope', sans-serif; text-transform: uppercase; letter-spacing: .1em; }
 .journey-card.featured { transform: translateY(-18px); }
-.proof-section { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; background: #f1ecdf; }
-.proof-section:before { content: ''; position: absolute; left: 0; right: 0; height: 450px; background: #f1ecdf; z-index: -1; }
+.proof-section { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(48px, 8vw, 100px); align-items: start; background: #f1ecdf; }
+.proof-intro, .benefit-list { min-width: 0; }
 .proof-intro p { max-width: 440px; margin: 24px 0; color: #6f746e; font: 15px/1.75 'Manrope', sans-serif; }
 .benefit { display: grid; grid-template-columns: 44px 1fr; gap: 22px; padding: 25px 0; border-bottom: 1px solid rgba(20,60,50,.16); }
 .benefit strong, .included-grid > div > span { color: #a4863d; font: 700 11px 'Manrope', sans-serif; letter-spacing: .1em; }
