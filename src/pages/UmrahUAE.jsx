@@ -4,40 +4,40 @@ import { Link } from 'react-router-dom'
 const travelOptions = [
   {
     icon: '✈️',
-    title: 'Express Air Travel',
+    title: 'Express Air Travel (3 Hours)',
     badge: 'Most Popular',
-    desc: 'Direct flights from Dubai (DXB), Sharjah (SHJ), and Abu Dhabi (AUH) via Emirates, FlyDubai, Air Arabia, and Saudia. Arrive in Jeddah or Madinah in under 3 hours — perfect for 3 to 5-day weekend Umrah trips.',
-    features: ['DXB/SHJ/AUH departure', 'Flights from AED 350+', 'Land in Jeddah or Madinah', 'Ideal for short trips']
+    desc: 'Direct flights from DXB/SHJ/AUH to Jeddah or Madinah via Emirates, FlyDubai, Air Arabia, and Saudia. Perfect for weekend Umrah escapes (3-5 days). Fastest way to reach the Haramain from the UAE.',
+    features: ['DXB/SHJ/AUH direct to Jeddah/Madinah', 'Flights from AED 350+', 'Land in 3 hours', 'Best for short trips & business travelers']
   },
   {
     icon: '🚌',
-    title: 'Luxury Overland Coach',
+    title: 'Luxury Overland Journey (10-14 Days)',
     badge: 'Budget-Friendly',
-    desc: 'Economical 10 to 14-day overland packages departing every Wednesday and Saturday from Dubai and Sharjah. Premium AC sleeper coaches with reclining seats, meals, and prayer stops en route.',
-    features: ['Departs Wed & Sat from Dubai', 'Border crossing included', 'Sleeper AC coach with meals', 'Budget-conscious option']
+    desc: 'Premium AC sleeper coaches departing every Wednesday and Saturday from Dubai and Sharjah. Experience Umrah at a relaxed pace with prayer stops, meals included, and fellow pilgrims for company. Ideal for retirees and large families.',
+    features: ['Departs Wed/Sat from Dubai & Sharjah', 'All border crossings included', 'Sleeper AC coach with meals', 'Eco-friendly & cost-effective']
   },
   {
     icon: '🚗',
-    title: 'Private VIP Transfer',
+    title: 'Private VIP Transfer (12 Hours)',
     badge: 'Premium',
-    desc: 'For families and executives who want a first-class experience. Dedicated GMC Yukon, Toyota Hiace, or Mercedes Sprinter — fully private, on-demand, no schedule to follow.',
-    features: ['Private vehicle only for your group', 'Pick up from any UAE emirate', 'Professional driver + guide', 'Custom stops & schedule']
+    desc: 'For families and executives seeking privacy and luxury. Dedicated GMC/Mercedes with professional drivers and bilingual guides. Custom itinerary, stops where you want, when you want. The ultimate Umrah experience.',
+    features: ['Private vehicle for your family', 'Pick-up from any UAE emirate', 'Professional driver + scholar-guide', 'Fully customizable schedule']
   }
 ]
 
 const features = [
-  { icon: '🪪', title: 'Emirates ID Fast-Track Visa', desc: 'UAE residents with valid Emirates ID get Umrah E-Visa processed within 24 hours through our authorized Saudi agent channels.' },
-  { icon: '🏨', title: '5-Star Haram-View Hotels', desc: 'We book directly with Fairmont, Swissôtel, Hilton, and Marriott — negotiated rates ensure you get premium rooms at the best prices.' },
-  { icon: '🚄', title: 'Haramain High-Speed Rail', desc: 'Fast-track tickets on the 300km/h Haramain Railway between Jeddah, Makkah, and Madinah — no traffic, arrives in 30 minutes.' },
-  { icon: '📅', title: 'Flexible Dates Year-Round', desc: 'No fixed group departure. Book any week throughout the year including Ramadan, school holidays, and long UAE public holidays.' },
-  { icon: '🌙', title: 'Ramadan Special Packages', desc: 'Exclusive Ramadan Umrah packages with extended stays (last 10 nights), Itikaf arrangements, and Eid al-Fitr in Makkah options.' },
-  { icon: '👨‍👩‍👧‍👦', title: 'Family & Group Specialist', desc: 'Group discounts for 10+ pilgrims. Interconnecting family rooms, children-friendly itineraries, and multilingual guides.' },
+  { icon: '🪪', title: 'Super-Fast Visa Processing', desc: 'UAE residents: Umrah E-Visa approved in just 24 hours. No long queues, no paperwork hassles. We handle everything through authorized Saudi channels.' },
+  { icon: '🏨', title: '5-Star Haram-View Luxury', desc: 'Book directly with Fairmont Makkah, Swissotel Al Makkah, Hilton, and Marriott. Get premium rooms with Haram views at the best negotiated rates. Walk to Tawaf in 2 minutes.' },
+  { icon: '🚄', title: 'Haramain Express Rail', desc: 'Travel on Saudi Arabia high-speed Haramain Railway (300km/h). Makkah to Madinah in just 30 minutes. No traffic, smooth ride, premium comfort. Included in your package.' },
+  { icon: '📅', title: 'Year-Round Flexible Booking', desc: 'Book any date that suits your schedule — no fixed group departures. Ramadan, summer holidays, weekends, or anytime. Umrah on your timeline, not ours.' },
+  { icon: '🌙', title: 'Ramadan Umrah Specialist', desc: 'Extended Ramadan packages (last 10 nights), Itikaf arrangements, Taraweeh in Haram, and celebrate Eid al-Fitr in Makkah with our special packages.' },
+  { icon: '👨‍👩‍👧‍👦', title: 'Family & Group Discount Expert', desc: 'Groups of 10+ get special rates. We arrange interconnecting family rooms, children guides, elderly-friendly itineraries, and multilingual support.' },
 ]
 
 const testimonials = [
-  { name: 'Sameera Begum', city: 'Dubai, UAE', text: 'Booked Umrah from Dubai for my family. Seamless process, excellent hotels, and very affordable. Jazakallah khair to the Crescent team.' },
-  { name: 'Rashid Al Farsi', city: 'Abu Dhabi, UAE', text: 'The weekend Executive Umrah package was perfect for my schedule. Left Thursday, back Sunday — performed a beautiful Umrah in between.' },
-  { name: 'Khadeeja Noor', city: 'Sharjah, UAE', text: 'First time performing Umrah. The guide was extremely helpful and patient. Hotels were stunning. Already planning to go again!' },
+  { name: 'Sameera Begum', city: 'Dubai, UAE', text: 'Booked our family Umrah in just 24 hours through WhatsApp! Visa came within 1 day. The Fairmont hotel was stunning, and the Crescent guide made everything so easy. Best experience ever. Alhamdulillah!' },
+  { name: 'Rashid Al Farsi', city: 'Abu Dhabi, UAE', text: 'Took the weekend Executive Umrah package Friday evening — arrived Makkah Saturday morning, performed beautiful Umrah, and was back in Abu Dhabi Monday morning. Perfect for working professionals. Will do this twice a year now!' },
+  { name: 'Khadeeja Noor', city: 'Sharjah, UAE', text: 'First Umrah ever. So nervous! But the Crescent team held my hand every step. They arranged wheelchair Tawaf, helped with wudu, and made me feel so safe. The prayers in Haram... words cannot express. Alhamdulillah for Crescent.' },
 ]
 
 export default function UmrahUAE() {

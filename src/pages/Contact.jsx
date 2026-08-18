@@ -13,8 +13,8 @@ export default function Contact() {
         <div className="glow-orb opacity-50" style={{ top: '-40%', left: '-20%' }} />
         <div className="absolute inset-0 islamic-pattern opacity-20" />
         <div className="relative z-10 px-4 sm:px-6">
-          <h1 className="font-heading text-4xl sm:text-5xl font-bold mb-2 sm:mb-3" style={{ color: 'var(--pearl)' }}>Speak to a Pilgrimage Advisor</h1>
-          <p className="font-body text-sm sm:text-lg" style={{ color: 'rgba(250,248,243,0.6)' }}>Free consultation — we plan, you pray</p>
+          <h1 className="font-heading text-4xl sm:text-5xl font-bold mb-2 sm:mb-3" style={{ color: 'var(--pearl)' }}>Start Your Pilgrimage Journey</h1>
+          <p className="font-body text-sm sm:text-lg" style={{ color: 'rgba(250,248,243,0.6)' }}>Our advisors respond within 2 hours. WhatsApp, call, or fill the form below</p>
         </div>
       </div>
 
@@ -22,9 +22,9 @@ export default function Contact() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-5 gap-8 sm:gap-12">
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
-            <h2 className="font-heading text-3xl font-bold reveal" style={{ color: 'var(--emerald)' }}>Get in Touch</h2>
+            <h2 className="font-heading text-3xl font-bold reveal" style={{ color: 'var(--emerald)' }}>Reach Out to Us</h2>
             <p className="font-body text-base leading-relaxed reveal" style={{ color: 'rgba(26,26,26,0.65)' }}>
-              Our pilgrimage advisors are available 6 days a week to answer all your questions and help plan your perfect Hajj or Umrah journey.
+              Our pilgrimage advisors are here to guide you through every step. Available 6 days a week (9am-7pm). WhatsApp for fastest response — we answer within 2 hours. Your spiritual journey deserves expert, personal attention.
             </p>
 
             {[
@@ -57,7 +57,8 @@ export default function Contact() {
 
           {/* Form */}
           <div className="lg:col-span-3 glass-card-light p-8 rounded-2xl reveal-right">
-            <h3 className="font-heading text-2xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>Send Your Enquiry</h3>
+            <h3 className="font-heading text-2xl font-bold mb-1" style={{ color: 'var(--emerald)' }}>Quick Enquiry</h3>
+            <p className="font-body text-sm mb-6" style={{ color: 'rgba(26,26,26,0.6)' }}>Fill this form and we'll call you back with personalized package options</p>
             <div className="grid sm:grid-cols-2 gap-5">
               {[
                 { name: 'name', label: 'Your Name', placeholder: 'Full Name' },

@@ -27,8 +27,9 @@ function initPersistent() {
   document.body.appendChild(progressBar)
 
   const updateBar = () => {
-    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100
-    if (progressBar) progressBar.style.width = Math.min(pct, 100) + '%'
+    const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
+    const pct = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0
+    if (progressBar) progressBar.style.width = Math.min(Math.max(pct, 0), 100) + '%'
   }
   window.addEventListener('scroll', updateBar, { passive: true })
 

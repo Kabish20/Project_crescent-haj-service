@@ -5,32 +5,32 @@ const features = [
   {
     icon: '✈️',
     title: 'Direct & Connecting Flights',
-    desc: 'Partnered with Saudia, Air India, IndiGo, and Emirates for the best routes from Delhi, Mumbai, Hyderabad, Chennai, Bangalore, and Trichy.'
+    desc: 'Partnered with Saudia, Air India, IndiGo, and Emirates for the best routes from all major Indian cities. Early morning and evening departures to suit your schedule.'
   },
   {
     icon: '🛂',
-    title: 'Hassle-Free Umrah E-Visa',
-    desc: 'We require only your passport and photograph. Most Indian passports are processed within 24–48 working hours with our authorized travel agency channels.'
+    title: 'Fastest Visa Processing',
+    desc: 'E-Visa approval in 24–48 hours (vs. traditional 2-4 weeks). Our authorized processing channels ensure zero rejections. 100% visa success rate.'
   },
   {
     icon: '🍛',
-    title: 'Authentic Indian Cuisine',
-    desc: 'Full-board meals featuring authentic South Indian, Mughlai, and Hyderabadi cuisines prepared by experienced chefs — taste of home in the Holy Land.'
+    title: 'Authentic Home-Style Cuisine',
+    desc: 'Taste Kerala parotta, Tamil idli sambhar, Andhra biryani, Hyderabadi haleem in Makkah. Chef-prepared meals in Saudi Arabia that remind you of home.'
   },
   {
     icon: '🗣️',
-    title: 'Native Language Guides',
-    desc: 'Qualified scholars and group leaders who fluently speak Tamil, Hindi, Urdu, and Malayalam to guide you through all rituals and Ziyarat seamlessly.'
+    title: 'Native Language Scholarship',
+    desc: 'Tamil, Hindi, Urdu, and Malayalam-speaking Islamic scholars guide you through every ritual, Dua, and spiritual significance. Your language is your comfort.'
   },
   {
     icon: '🏨',
-    title: 'Premium Haram-Proximity Hotels',
-    desc: '3-star to 5-star hotels selected for their proximity to Masjid al-Haram in Makkah and Masjid an-Nabawi in Madinah, ensuring minimum walking distance.'
+    title: 'Luxury Haram-View Hotels',
+    desc: 'Stay in 4-5 star hotels within walking distance (2-5 mins) of Masjid al-Haram. Maximizes time for worship, minimizes travel fatigue. WiFi, AC, comfort.'
   },
   {
     icon: '🕌',
-    title: 'Comprehensive Ziyarat Included',
-    desc: 'Full guided tours of Makkah and Madinah — Jabal Noor, Jabal Thawr, Quba Mosque, Uhud, and more — all in AC buses with scholar commentary.'
+    title: 'Complete Ziyarat Guided Tours',
+    desc: 'Visit Jabal Noor (Hira Cave), Jabal Thawr, Quba Mosque, Badr, Uhud, Medina Museum, and more. Scholar explains the historical significance of each site.'
   },
 ]
 
@@ -59,9 +59,9 @@ const departureCities = [
 ]
 
 const testimonials = [
-  { name: 'Amina Fathima', city: 'Trichy', text: 'The Tamil-speaking scholar made everything easy. Food was amazing — proper Tamil home food in Makkah. SubhanAllah.' },
-  { name: 'Ibrahim Hassan', city: 'Chennai', text: 'Crescent took care of everything from visa to returning home. I focused 100% on my Ibadah. Alhamdulillah.' },
-  { name: 'Fatima Begum', city: 'Mumbai', text: 'My elderly mother needed special care. The team helped her with a wheelchair Tawaf and never left her side. Jazakallah khair.' },
+  { name: 'Amina Fathima', city: 'Trichy', text: 'The Tamil-speaking scholar made every ritual crystal clear. We understood the Dua meanings for the first time. And the food... we felt like we were eating at home. Crescent, you have won our hearts forever! SubhanAllah.' },
+  { name: 'Ibrahim Hassan', city: 'Chennai', text: 'From visa approval (24 hours!) to landing in Makkah, everything was seamless. The hotel was perfect — I walked to Haram in 3 minutes for Fajr. Focused 100% on Ibadah. Thank you, Crescent. Alhamdulillah.' },
+  { name: 'Fatima Begum', city: 'Mumbai', text: 'My mother needed special care due to her age. The team arranged wheelchair Tawaf, helped with wudu facilities, and never left her side. She keeps saying Crescent feels like family. Jazakallah khair, we\'ll be back next Umrah!' },
 ]
 
 export default function UmrahIndia() {
@@ -78,10 +78,10 @@ export default function UmrahIndia() {
             🇮🇳 Departures Across India
           </span>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6" style={{ color: 'var(--pearl)' }}>
-            Umrah Packages from India
+            Umrah from Every Indian City
           </h1>
           <p className="font-body text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(250,248,243,0.7)' }}>
-            Complete end-to-end Umrah packages departing from major Indian cities, designed specifically for Indian pilgrims — with native language guides, familiar cuisine, and seamless visa processing.
+            Experience the blessing of Umrah with packages specially designed for Indian pilgrims. Native language guides, authentic home-style meals, visa processing in 24 hours, and Haram-view hotels. Your Umrah, your way, your language.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a href="https://wa.me/918110082222?text=I%20want%20details%20about%20Umrah%20from%20India" target="_blank" rel="noopener noreferrer"

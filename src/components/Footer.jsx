@@ -23,7 +23,7 @@ export default function Footer() {
             Begin Your Sacred Journey Today
           </p>
           <p className="font-body mb-6" style={{color:'rgba(250,248,243,0.7)'}}>
-            Talk to our pilgrimage advisors — completely free consultation
+            Join 1000+ pilgrims. Talk to our advisors — completely free consultation
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
@@ -37,6 +37,28 @@ export default function Footer() {
             <Link to="/contact" className="btn-ghost px-8 py-3 rounded-full font-body font-bold text-sm">
               Plan My Pilgrimage
             </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust Badges */}
+      <div className="bg-gradient-to-r from-emerald-900/30 to-emerald-800/30 py-8 px-4 sm:px-6 border-y border-emerald-700/20">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <p className="text-2xl font-heading font-bold" style={{color:'var(--gold)'}}>1000+</p>
+            <p className="text-xs font-body mt-1" style={{color:'rgba(250,248,243,0.6)'}}>Pilgrims Served</p>
+          </div>
+          <div>
+            <p className="text-2xl font-heading font-bold" style={{color:'var(--gold)'}}>100%</p>
+            <p className="text-xs font-body mt-1" style={{color:'rgba(250,248,243,0.6)'}}>Visa Success</p>
+          </div>
+          <div>
+            <p className="text-2xl font-heading font-bold" style={{color:'var(--gold)'}}>15+</p>
+            <p className="text-xs font-body mt-1" style={{color:'rgba(250,248,243,0.6)'}}>Years Trusted</p>
+          </div>
+          <div>
+            <p className="text-2xl font-heading font-bold" style={{color:'var(--gold)'}}>24/7</p>
+            <p className="text-xs font-body mt-1" style={{color:'rgba(250,248,243,0.6)'}}>Support</p>
           </div>
         </div>
       </div>

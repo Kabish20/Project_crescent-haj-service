@@ -2,19 +2,19 @@ import { useReveal, GoldDivider } from '../components/ScrollReveal'
 import { Link } from 'react-router-dom'
 
 const values = [
-  { icon: '🤲', title: 'Sincerity (Ikhlas)', desc: 'We operate with the pure intention of aiding pilgrims in their worship, prioritizing spiritual fulfillment over commercial gain. Every decision we make is rooted in the fear of Allah.' },
-  { icon: '✨', title: 'Excellence (Ihsan)', desc: 'From the moment you contact us until you return home safely, we strive for perfection in every detail — the hotel, the guide, the meal, and the transfer.' },
-  { icon: '🛡️', title: 'Trust (Amanah)', desc: 'We treat your journey, your funds, and your safety as a sacred trust (Amanah), maintaining complete transparency in all our pricing and operations.' },
-  { icon: '❤️', title: 'Family Care', desc: 'Every pilgrim, especially the elderly and children, is treated with the same compassion and respect as our own family members — no pilgrim is left behind.' },
+  { icon: '🤲', title: 'Sincerity (Ikhlas)', desc: 'We operate with the pure intention of aiding pilgrims in their worship. For us, your spiritual journey is more important than profit. Every decision is rooted in the fear of Allah (Taqwa).' },
+  { icon: '✨', title: 'Excellence (Ihsan)', desc: 'From your first WhatsApp message to the moment you return home, we strive for perfection. Perfect hotel rooms with Haram views. Perfect guides with Islamic scholarship. Perfect meals that taste like home.' },
+  { icon: '🛡️', title: 'Sacred Trust (Amanah)', desc: 'Your savings, your visa, your safety — these are sacred trusts (Amanah). We guard them with complete transparency. No hidden charges. No broken promises. Only your peace of mind.' },
+  { icon: '❤️', title: 'Family Care & Compassion', desc: 'Every pilgrim — from children to the elderly — is treated as a member of our family. No one is left behind. We arrange wheelchair Tawaf, special meals, and extra care with the love of a family member.' },
 ]
 
 const milestones = [
-  { year: '2009', title: 'Founded in Trichy', desc: 'Crescent Haj Service was established with a single mission: to remove the worldly anxieties of travel so pilgrims can focus on their Ibadah.' },
-  { year: '2012', title: 'First Group Hajj', desc: 'Successfully organized our first group Hajj expedition, earning the trust of 40 pilgrims from Tamil Nadu. 100% visa success rate achieved.' },
-  { year: '2015', title: 'UAE Operations Launched', desc: 'Expanded services to serve the large Indian Muslim expat community in Dubai, Abu Dhabi, and Sharjah with specialized UAE packages.' },
-  { year: '2018', title: '500 Pilgrims Milestone', desc: 'Marked the milestone of serving 500 happy pilgrims — a testament to word-of-mouth trust built through sincerity and service excellence.' },
-  { year: '2021', title: 'Post-Pandemic Revival', desc: 'Among the first Tamil Nadu agencies to resume Umrah services after Saudi Arabia reopened, helping pilgrims whose trips were delayed for 2 years.' },
-  { year: '2024', title: '1000+ Pilgrims Served', desc: 'Proudly crossed the milestone of 1,000 pilgrims served from India and UAE — a humbling honor we carry with deep gratitude to Allah.' },
+  { year: '2009', title: 'Founded with a Promise', desc: 'Crescent Haj Service was established in Trichy with one sacred mission: to remove all worldly anxieties from pilgrims so they could focus 100% on their Ibadah and connection with Allah.' },
+  { year: '2012', title: 'First Hajj Group: 40 Pilgrims', desc: 'Successfully organized our first Hajj expedition. 100% visa success rate. Every pilgrim returned saying it was life-changing. Word-of-mouth trust began.' },
+  { year: '2015', title: 'UAE Expansion: Serving Expats', desc: 'Recognized the blessing of serving the large Indian Muslim expat community across Dubai, Abu Dhabi, and Sharjah with specialized fast-track packages.' },
+  { year: '2018', title: '500 Pilgrims Celebrated', desc: 'A humbling milestone — 500 souls received Hajj/Umrah blessings through Crescent. Built entirely on word-of-mouth trust and heartfelt recommendations from families.' },
+  { year: '2021', title: 'Reopening After COVID-19', desc: 'Among the first agencies in Tamil Nadu to resume Hajj/Umrah services post-pandemic. Helped reunite families and pilgrims whose journeys were delayed for 2 years.' },
+  { year: '2024', title: '1000+ Pilgrims: A Divine Honor', desc: 'Crossed the blessed milestone of serving 1,000+ pilgrims. This is not just a number — it\'s 1,000 transformed souls, 1,000 answered duas, 1,000 families closer to Allah. Alhamdulillah.' },
 ]
 
 const team = [
@@ -83,10 +83,13 @@ export default function About() {
               "Assalamu Alaikum wa Rahmatullahi wa Barakatuh.
             </p>
             <p className="font-body text-base leading-relaxed mb-5" style={{ color: 'rgba(26,26,26,0.7)' }}>
-              When I founded Crescent Haj Service over 15 years ago, my vision was simple: to remove the worldly anxieties of travel so that pilgrims could focus entirely on their connection with Allah. I had seen too many people struggle with logistics, hotels, and visas — and it was taking away from the peace and spiritual focus of the Haramain.
+              When I founded Crescent Haj Service in 2009, my heart ached for every pilgrim struggling with visas, hotels, and logistics. I saw families spending months saving money for Hajj, only to stress about travel arrangements instead of focusing on their sacred journey.
             </p>
             <p className="font-body text-base leading-relaxed mb-5" style={{ color: 'rgba(26,26,26,0.7)' }}>
-              Alhamdulillah, since 2009, we have had the profound honor of serving over a thousand Guests of Allah (Duyuf al-Rahman). Every package we design, every hotel we select, and every guide we appoint is chosen with the strict criterion of serving you with excellence (Ihsan). We do not just book tickets — we hold your hand through the rituals of Hajj and Umrah."
+              So I decided: I will take all of that burden upon myself. Every pilgrim who comes to Crescent will be treated as my own family. Their visa, their hotel, their meal, their spiritual growth — all of it will be my responsibility.
+            </p>
+            <p className="font-body text-base leading-relaxed mb-5" style={{ color: 'rgba(26,26,26,0.7)' }}>
+              Alhamdulillah, over 15 years later, we have had the profound honor of serving 1,000+ Guests of Allah (Duyuf al-Rahman). Each one of you has taught me what true sincerity means. Each journey has deepened my belief in this work. We do not just book flights and hotels — we hold your hand through the rituals of the Haramain and serve your soul."
             </p>
             <p className="font-heading text-lg italic font-bold mb-1" style={{ color: 'var(--gold)' }}>
               — Mohamed Mubarak A

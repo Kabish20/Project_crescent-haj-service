@@ -54,14 +54,14 @@ export default function HajjPackages() {
       {/* Introduction & Virtues */}
       <section className="py-20" style={{ background: 'var(--sand)' }}>
         <div className="max-w-5xl mx-auto px-6 text-center reveal">
-          <h2 className="font-heading text-4xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>The Journey of a Lifetime</h2>
+          <h2 className="font-heading text-4xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>The Fifth Pillar: A Sacred Journey</h2>
           <p className="font-body text-base leading-relaxed mb-6" style={{ color: 'rgba(26,26,26,0.7)' }}>
-            Hajj is a profound spiritual migration—a physical and emotional journey that cleanses the soul. Prophet Muhammad (ﷺ) said: <br/><br/>
-            <strong className="font-heading text-2xl italic" style={{ color: 'var(--gold)' }}>"An accepted Hajj brings no less a reward than Paradise."</strong><br/>
+            Hajj is the fifth pillar of Islam—a spiritual pilgrimage that unites 2+ million Muslims from every corner of the world. It is a profound journey of worship, humility, and transformation. Prophet Muhammad (ﷺ) said: <br/><br/>
+            <strong className="font-heading text-2xl italic" style={{ color: 'var(--gold)' }}>"An accepted Hajj brings no less a reward than Paradise. The reward for Hajj is nothing but Jannah (Paradise)."</strong><br/>
             <span className="text-sm">(Sahih al-Bukhari)</span>
           </p>
           <p className="font-body text-base leading-relaxed" style={{ color: 'rgba(26,26,26,0.7)' }}>
-            At Crescent Haj Service, we understand the immense weight and privilege of this undertaking. For over 15 years, we have meticulously crafted our Hajj packages to remove the logistical burdens, allowing you to focus entirely on your worship, repentance, and connection with Allah.
+            At Crescent Haj Service, we understand the immense spiritual weight and privilege of this undertaking. For over 15 years, we have meticulously crafted our Hajj packages to remove logistical burdens—allowing you to focus entirely on your worship, repentance, and deep connection with Allah. Our scholar-led groups ensure you perform every ritual with correct Islamic understanding.
           </p>
         </div>
       </section>
@@ -117,20 +117,41 @@ export default function HajjPackages() {
             ))}
           </div>
 
+          {/* FAQ Section */}
+          <div className="mt-24 mb-20">
+            <SectionHeader eyebrow="Your Questions" title="Frequently Asked Questions" subtitle="Everything you need to know about Hajj with Crescent." />
+            <div className="max-w-3xl mx-auto space-y-4">
+              {[
+                { q: 'How far in advance should I book my Hajj package?', a: 'We recommend booking 6-8 months before your intended Hajj date. Hajj visas require advance planning, and early booking ensures you get the best hotel options near the Harams.' },
+                { q: 'Are there payment plans available?', a: 'Yes! We offer flexible payment plans spread over 3-6 months to make Hajj financially manageable for families. A deposit secures your seat, with the balance due in installments.' },
+                { q: 'Will there be a scholar with our group?', a: 'Absolutely. Every Crescent group is led by a qualified Islamic scholar (Aalim) who guides you through all rituals, explains their spiritual significance, and conducts daily Quranic reflections.' },
+                { q: 'What if I have health concerns or dietary restrictions?', a: 'Please share your health requirements and dietary preferences during registration. We arrange Indian cuisine, diabetes-friendly options, and coordinate with hotels for any special medical needs.' },
+                { q: 'Is travel insurance included?', a: 'Travel insurance can be added to your package for a minimal additional fee. We recommend it to cover any unexpected health emergencies during your pilgrimage.' },
+                { q: 'What if Hajj gets disrupted due to unforeseen circumstances?', a: 'We maintain close coordination with the Saudi Ministry of Hajj. In rare cases of disruption, all bookings are refunded or deferred to the next Hajj season. Your trust is paramount.' },
+              ].map((item, i) => (
+                <div key={i} className="glass-card-light p-6 rounded-2xl reveal">
+                  <h4 className="font-heading font-bold text-base mb-3" style={{ color: 'var(--emerald)' }}>Q: {item.q}</h4>
+                  <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,26,26,0.7)' }}>A: {item.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-20 text-center reveal">
-            <h3 className="font-heading text-3xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>Limited Seats Available for Hajj 2025</h3>
+            <h3 className="font-heading text-3xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>Ready to Answer the Call of Hajj?</h3>
             <p className="font-body text-base mb-8 max-w-2xl mx-auto" style={{ color: 'rgba(26,26,26,0.65)' }}>
-              Hajj quotas are strictly regulated. We highly recommend booking your package at least 6-8 months in advance to ensure visa processing and the best accommodation options.
+              Limited seats are available for Hajj 2025. Our quotas fill quickly due to high demand. Join 1000+ pilgrims who have transformed their lives through Crescent's expert-led Hajj packages. Book your spiritual journey today.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/contact" className="btn-emerald px-10 py-4 rounded-full font-body font-bold text-sm">
-                Request a Call Back
+                Schedule a Free Consultation
               </Link>
-              <a href="https://wa.me/918110082222?text=I%20want%20to%20enquire%20about%20detailed%20Hajj%20packages" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/918110082222?text=I%20want%20to%20enquire%20about%20Hajj%202025%20packages%20and%20payment%20plans" target="_blank" rel="noopener noreferrer"
                 className="btn-gold px-10 py-4 rounded-full font-body font-bold text-sm inline-flex items-center gap-2">
-                Get Hajj Details on WhatsApp
+                WhatsApp Us Now
               </a>
             </div>
+            <p className="font-body text-sm mt-6" style={{ color: 'rgba(26,26,26,0.5)' }}>Hajj is once in a lifetime. Let's make it unforgettable. 🕌</p>
           </div>
         </div>
       </section>
