@@ -152,12 +152,114 @@ section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
 .included-grid > div { padding-top: clamp(12px, 2vw, 16px); border-top: 1px solid #d7d0bd; }
 .included-grid h3 { margin: clamp(10px, 2vw, 13px) 0 clamp(4px, 1vw, 6px); color: #173e32; font: 600 clamp(18px, 4vw, 23px)/.95 'Cormorant Garamond', serif; }
 .testimonial-section { padding: clamp(60px, 10vw, 100px) clamp(16px, 4vw, 24px); text-align: center; color: #fff; background: #133b31; }
+.home-refresh > .testimonial-section { display: none; }
+.customer-review-showcase { padding: 105px max(var(--content-gutter), 24px); background: #fff; }
+.customer-review-heading { width: min(var(--content-width), 100%); margin: 0 auto 38px; display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+.customer-review-heading h2 { margin: 0; color: #153d32; font: 600 48px/.93 'Cormorant Garamond', serif; letter-spacing: -.035em; }
+.customer-review-heading h2 em { color: var(--gold); font-style: italic; font-weight: 500; }
+.review-google-link { display: inline-flex; align-items: center; gap: 8px; color: #9c7b2b; text-decoration: none; text-transform: uppercase; letter-spacing: .1em; font: 700 10px 'Manrope', sans-serif; }
+.review-google-link:hover { color: #153d32; }
+.customer-review-window { width: min(var(--content-width), 100%); margin: 0 auto; overflow: hidden; }
+.customer-review-track { width: max-content; display: flex; gap: 18px; padding: 4px 2px 18px; animation: reviewMarquee 42s linear infinite; }
+.customer-review-track:hover { animation-play-state: paused; }
+.customer-review-card { width: clamp(300px, calc((var(--content-width) - 36px) / 3), 380px); min-height: 330px; flex: 0 0 auto; display: flex; flex-direction: column; padding: 22px; border: 1px solid #ececf0; border-radius: 16px; background: #fff; box-shadow: 0 10px 24px rgba(15,44,34,.06); }
+.customer-review-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.reviewer-identity { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.reviewer-avatar { width: 50px; height: 50px; flex: 0 0 50px; display: inline-flex; align-items: center; justify-content: center; border-radius: 13px; color: #fff; background: #0b9870; box-shadow: 0 5px 10px rgba(15,44,34,.14); font: 700 18px 'Manrope', sans-serif; }
+.customer-review-card:nth-child(3n + 2) .reviewer-avatar { background: #dd7700; }
+.customer-review-card:nth-child(3n) .reviewer-avatar { background: #7138e8; }
+.reviewer-identity strong, .reviewer-identity small { display: block; }
+.reviewer-identity strong { overflow: hidden; color: #172131; text-overflow: ellipsis; white-space: nowrap; font: 700 16px 'Manrope', sans-serif; }
+.reviewer-identity small { margin-top: 5px; color: #9ca4b2; text-transform: uppercase; letter-spacing: .06em; font: 700 10px 'Manrope', sans-serif; }
+.google-review-badge { display: inline-flex; align-items: center; gap: 5px; padding: 8px 10px; border: 1px solid #edf0ed; border-radius: 9px; color: #145a36; background: #fff; text-decoration: none; white-space: nowrap; box-shadow: 0 2px 5px rgba(0,0,0,.04); font: 700 10px 'Manrope', sans-serif; }
+.google-review-badge span { color: #4285f4; font-size: 15px; font-weight: 800; }
+.customer-stars { margin: 18px 0 12px; color: #f5bd00; letter-spacing: .1em; font: 17px/1 'Manrope', sans-serif; }
+.customer-review-text { display: -webkit-box; overflow: hidden; margin: 0; color: #586273; font: italic 13px/1.55 'Manrope', sans-serif; -webkit-box-orient: vertical; -webkit-line-clamp: 5; }
+.customer-review-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 24px; border-top: 1px solid #f0f1f1; }
+.customer-review-footer small, .customer-review-footer strong { display: block; }
+.customer-review-footer small { color: #a5bcae; text-transform: uppercase; letter-spacing: .12em; font: 700 10px 'Manrope', sans-serif; }
+.customer-review-footer strong { margin-top: 6px; color: #17603b; font: 700 14px 'Manrope', sans-serif; }
+.review-verified { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; color: #17603b; background: #edf9f1; font: 700 18px 'Manrope', sans-serif; }
+.customer-review-dots { display: flex; justify-content: center; gap: 10px; margin-top: 22px; }
+.customer-review-dots span { width: 7px; height: 7px; border-radius: 50%; background: #cfd4d7; }
+.customer-review-dots span.active { width: 10px; height: 10px; margin-top: -1px; background: #1976e8; }
+@keyframes reviewMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 9px)); }
+}
+.testimonial-review-grid { width: min(1180px, 100%); margin: 38px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; text-align: left; }
+.testimonial-review-card { padding: 30px; border: 1px solid rgba(255,255,255,.12); border-radius: 12px; background: rgba(5,24,20,.38); }
+.testimonial-review-card .quote-mark { height: 35px; text-align: left; }
+.testimonial-review-card blockquote { max-width: none; margin: 18px 0; color: rgba(255,255,255,.82); font-size: 18px; line-height: 1.55; }
+.testimonial-review-card > p { color: rgba(255,255,255,.66); font: 12px 'Manrope', sans-serif; }
+.testimonial-review-card .rating { margin-top: 20px; }
+.reviewer-name { color: #f5e6b8 !important; font-weight: 700 !important; }
+.review-source-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; color: #e2c979; text-decoration: none; text-transform: uppercase; letter-spacing: .08em; font: 700 9px 'Manrope', sans-serif; }
+.review-source-link:hover { color: #fff; }
 .quote-mark { height: 42px; color: #d6b85d; font: 100px/.65 'Cormorant Garamond', serif; text-align: center; }
 .testimonial-section blockquote { max-width: 700px; margin: clamp(16px, 3vw, 24px) auto; font: italic 400 clamp(24px, 6vw, 35px)/1.08 'Cormorant Garamond', serif; }
 .testimonial-section > p { color: rgba(255,255,255,.6); font: 12px 'Manrope', sans-serif; }
 .rating { margin-top: 30px; color: #e2c979; letter-spacing: .2em; font: 14px 'Manrope', sans-serif; }.rating span { margin-left: 12px; color: rgba(255,255,255,.5); letter-spacing: .03em; font-size: 11px; }
 .testimonial-youtube-link { margin-top: 30px; display: inline-flex; align-items: center; gap: 8px; color: #f5e6b8; text-decoration: none; text-transform: uppercase; letter-spacing: .1em; font: 700 10px 'Manrope', sans-serif; transition: color .25s ease, transform .25s ease; }
 .testimonial-youtube-link:hover { color: #fff; transform: translateY(-2px); }
+.visa-hero { min-height: 560px; position: relative; overflow: hidden; color: #fff; background: #061c1b; }
+.visa-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.visa-hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,22,23,.97) 0%, rgba(4,22,23,.82) 38%, rgba(4,22,23,.2) 78%, rgba(4,22,23,.35)); }
+.visa-hero-content { position: relative; z-index: 2; width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: 0 auto; padding: 170px 0 105px; }
+.visa-eyebrow { display: block; margin-bottom: 22px; color: #e2c979; text-transform: uppercase; letter-spacing: .18em; font: 700 11px/1.2 'Manrope', sans-serif; }
+.visa-hero h1 { max-width: 720px; margin: 0 0 26px; color: #fff; font: 600 clamp(54px, 7vw, 92px)/.9 'Cormorant Garamond', serif; letter-spacing: -.035em; }
+.visa-hero h1 em, .visa-details-section h2 em, .visa-approvals-section h2 em, .visa-cta h2 em { color: var(--gold); font-style: italic; font-weight: 500; }
+.visa-hero-content p { max-width: 500px; color: rgba(255,255,255,.72); font: 400 17px/1.7 'Manrope', sans-serif; }
+.visa-visuals-section { padding: 105px 0 20px; background: #f8f6f0; }
+.visa-visuals-heading { width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: 0 auto 42px; }
+.visa-visuals-heading h2 { margin: 0; color: #153d32; font: 600 48px/.93 'Cormorant Garamond', serif; letter-spacing: -.035em; }
+.visa-visuals-heading h2 em { color: var(--gold); font-style: italic; font-weight: 500; }
+.visa-visual-grid { width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: 0 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.visa-visual-card { min-height: 390px; position: relative; overflow: hidden; border-radius: 12px; color: #fff; text-decoration: none; background: #163c32; }
+.visa-visual-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+.visa-visual-card:hover img { transform: scale(1.05); }
+.visa-visual-card-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,24,20,.94), rgba(5,24,20,.04) 75%); }
+.visa-visual-card-copy { position: absolute; inset: auto 24px 24px; color: #fff; }
+.visa-visual-card-copy h3 { margin: 0 0 8px; font: 600 30px/.95 'Cormorant Garamond', serif; }
+.visa-visual-card-copy p { margin: 0; color: rgba(255,255,255,.72); font: 13px/1.55 'Manrope', sans-serif; }
+#group-visa, #individual-visa, #iqama-visa { scroll-margin-top: 7rem; }
+.visa-details-section { padding: 105px 0; background: #f8f6f0; }
+.visa-content-grid { width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, .9fr); gap: clamp(48px, 8vw, 100px); align-items: center; }
+.visa-individual-grid { width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: 80px auto 0; padding-top: 80px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, .9fr); gap: clamp(48px, 8vw, 100px); align-items: center; border-top: 1px solid rgba(20,60,50,.16); }
+.visa-details-section h2, .visa-approvals-section h2 { margin: 0; color: #153d32; font: 600 48px/.93 'Cormorant Garamond', serif; letter-spacing: -.035em; }
+.visa-copy { max-width: 480px; margin: 25px 0 32px; color: #6f746e; font: 15px/1.75 'Manrope', sans-serif; }
+.visa-price-card { padding: 12px 30px; border-radius: 12px; background: #f1ecdf; box-shadow: 0 18px 45px rgba(15,44,34,.08); }
+.visa-price-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 25px 0; border-bottom: 1px solid rgba(20,60,50,.16); }
+.visa-price-row:last-child { border-bottom: 0; }
+.visa-price-row span { color: #6f746e; text-transform: uppercase; letter-spacing: .11em; font: 700 10px 'Manrope', sans-serif; }
+.visa-price-row strong { color: #153d32; text-align: right; font: 600 30px/.95 'Cormorant Garamond', serif; }
+.visa-approvals-section { padding: 105px 0; background: #f1ecdf; }
+.visa-approvals-content { width: min(900px, calc(100% - (var(--content-gutter) * 2))); margin: 0 auto; }
+.visa-approval-list { margin-top: 42px; border-top: 1px solid rgba(20,60,50,.16); }
+.visa-approval-item { display: grid; grid-template-columns: 60px 1fr; gap: 25px; align-items: center; padding: 24px 0; border-bottom: 1px solid rgba(20,60,50,.16); }
+.visa-approval-item span { color: #a4863d; font: 700 11px 'Manrope', sans-serif; letter-spacing: .1em; }
+.visa-approval-item strong { color: #173e32; font: 600 28px/.95 'Cormorant Garamond', serif; }
+.visa-requirements { margin-top: 72px; }
+.visa-iqama-grid { margin-top: 80px; }
+.visa-cta { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding: 100px max(var(--content-gutter), calc((100% - var(--content-width)) / 2)); background: #09211d; }
+.visa-cta h2 { margin: 0; color: #f8f6f0; font: 600 48px/.93 'Cormorant Garamond', serif; letter-spacing: -.035em; }
+@media (max-width: 900px) {
+  .visa-hero-content { padding-top: 140px; padding-bottom: 80px; }
+  .visa-details-section, .visa-approvals-section { padding: 80px 0; }
+  .visa-visuals-section { padding-top: 80px; }
+  .visa-visual-grid { grid-template-columns: 1fr; }
+  .visa-content-grid { grid-template-columns: 1fr; gap: 45px; }
+  .visa-individual-grid { grid-template-columns: 1fr; gap: 45px; margin-top: 60px; padding-top: 60px; }
+  .visa-price-card { padding-inline: 22px; }
+  .visa-cta { align-items: flex-start; flex-direction: column; padding-top: 80px; padding-bottom: 80px; }
+}
+@media (max-width: 560px) {
+  .visa-hero h1, .visa-details-section h2, .visa-approvals-section h2, .visa-cta h2 { font-size: 42px; }
+  .visa-price-row { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .visa-price-row strong { text-align: left; }
+  .visa-approval-item { grid-template-columns: 38px 1fr; gap: 15px; }
+  .visa-approval-item strong { font-size: 24px; }
+}
 .final-cta { width: 100%; max-width: none; margin: 0; padding: clamp(60px, 8vw, 100px) max(var(--content-gutter), calc((100% - var(--content-width)) / 2)); display: flex; align-items: center; justify-content: space-between; gap: clamp(20px, 5vw, 30px); background: #09211d; flex-wrap: wrap; }.final-cta h2 { color: #f8f6f0; flex: 1; min-width: 280px; text-align: center; }
 .mobile-action-bar { display: none; }
 
@@ -192,6 +294,7 @@ section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
   .mobile-action-bar { position: fixed; z-index: 30; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: repeat(3, 1fr); padding: 10px 8px calc(10px + env(safe-area-inset-bottom)); background: rgba(8,31,26,.97); box-shadow: 0 -4px 20px rgba(0,0,0,.15); }
   .mobile-action-bar a { color: #f5e6b8; text-align: center; text-decoration: none; text-transform: uppercase; letter-spacing: .08em; font: 700 9px 'Manrope', sans-serif; padding: 8px 4px; }
   .home-refresh { padding-bottom: 58px; }
+  .testimonial-review-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -1034,4 +1137,16 @@ body.menu-open {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@media (max-width: 900px) {
+  .customer-review-showcase { padding-top: 80px; padding-bottom: 80px; }
+  .customer-review-heading { align-items: flex-start; flex-direction: column; }
+  .customer-review-heading h2 { font-size: 42px; }
+  .customer-review-card { width: min(340px, calc(100vw - 64px)); }
+}
+
+@media (max-width: 560px) {
+  .customer-review-card { width: calc(100vw - 48px); min-height: 320px; padding: 20px; }
+  .customer-review-top { align-items: flex-start; flex-direction: column; }
 }

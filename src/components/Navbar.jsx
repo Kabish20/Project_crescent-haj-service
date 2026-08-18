@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 
 const navLinks = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
   {
     label: 'Packages',
     dropdown: [
@@ -11,8 +10,10 @@ const navLinks = [
       { label: 'Customized Umrah & Hajj', path: '/customizedumrah' },
     ]
   },
+  { label: 'Visa', path: '/visa' },
   { label: 'Ziyarat', path: '/ziyarat-tours' },
   { label: 'Nikkah Services', path: '/nikkah-masjids' },
+  { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
 ]
 

@@ -14,6 +14,7 @@ import TailorMade from './pages/TailorMade'
 import ZiyaratTours from './pages/ZiyaratTours'
 import NikkahMasjids from './pages/NikkahMasjids'
 import Contact from './pages/Contact'
+import Visa from './pages/Visa'
 
 function AppContent() {
   const location = useLocation()
@@ -39,6 +40,7 @@ function AppContent() {
         <Route path="/ziyarat-tours" element={<ZiyaratTours />} />
         <Route path="/nikkah-masjids" element={<NikkahMasjids />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/visa" element={<Visa />} />
       </Routes>
       {!isUmrahListingsPage && <Footer />}
       {!isUmrahListingsPage && <WhatsAppButton />}
