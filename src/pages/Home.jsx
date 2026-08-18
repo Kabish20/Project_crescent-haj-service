@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { createPortal } from 'react-dom'
 
 const journeys = [
   { title: 'Hajj packages', copy: 'Embark on the fifth pillar of Islam. Complete group packages with scholar guidance, premium hotels, and spiritual mentorship at every step.', image: '/hajj_banner.png', path: '/hajj-packages', tag: 'Seasonal departures' },
@@ -32,15 +33,15 @@ function GeneralEnquiryPopup() {
     return () => { document.body.style.overflow = '' }
   }, [open])
 
-  return <>
-    {open && <div className="general-enquiry-modal" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setOpen(false) }}>
+  if (!open) return null
+
+  return createPortal(<div className="general-enquiry-modal" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setOpen(false) }}>
       <div className="general-enquiry-dialog" role="dialog" aria-modal="true" aria-labelledby="general-enquiry-title">
         <button className="general-enquiry-close" type="button" aria-label="Close general enquiry form" onClick={() => setOpen(false)}>×</button>
         <h2 id="general-enquiry-title">General enquiry</h2>
         <iframe title="General enquiry form" src="https://forms.zohopublic.in/GoimomiHolidays/form/WebsiteLead/formperma/EE3MFyvZhURPIlQK32BZ5cwdxx6DvziEjg70HxXJg5k?zf_rszfm=1" />
       </div>
-    </div>}
-  </>
+    </div>, document.body)
 }
 
 export default function Home() {
