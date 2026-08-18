@@ -26,18 +26,18 @@ export default function About() {
   return (
     <div>
       {/* Hero */}
-      <div className="relative pt-32 pb-20 text-center overflow-hidden" style={{ background: 'var(--dark-bg)' }}>
+      <div className="relative pt-20 sm:pt-32 pb-12 sm:pb-20 text-center overflow-hidden" style={{ background: 'var(--dark-bg)' }}>
         <div className="glow-orb opacity-50" style={{ top: '-40%', left: '-20%' }} />
         <div className="absolute inset-0 islamic-pattern opacity-20" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
           <span className="inline-block text-xs font-body font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
             style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', color: 'var(--gold)' }}>
             ✦ Est. 2009 · Trichy, Tamil Nadu
           </span>
-          <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6" style={{ color: 'var(--pearl)' }}>
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6" style={{ color: 'var(--pearl)' }}>
             About Crescent Haj Service
           </h1>
-          <p className="font-body text-lg leading-relaxed" style={{ color: 'rgba(250,248,243,0.7)' }}>
+          <p className="font-body text-base sm:text-lg leading-relaxed" style={{ color: 'rgba(250,248,243,0.7)' }}>
             More than a travel agency. We are your trusted companions on the most important spiritual journey of your life — planned with sincerity, care, and 15+ years of experience.
           </p>
         </div>

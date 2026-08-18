@@ -52,13 +52,13 @@ export default function Navbar() {
           scrolled ? 'navbar-scrolled' : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-auto sm:h-20 py-3 sm:py-0">
           {/* Logo */}
           <Link to="/" className="flex items-center group" aria-label="Crescent Haj Service Home">
             <img
               src="/logo.png"
               alt="Crescent Haj Service Logo"
-              className="h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+              className="h-14 sm:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               style={{
                 filter: 'invert(1) hue-rotate(180deg) saturate(2) brightness(1.2)',
                 opacity: 0.95,

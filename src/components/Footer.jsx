@@ -41,11 +41,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-grid max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 items-start">
+      <div className="footer-grid max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-6 sm:gap-x-10 gap-y-8 sm:gap-y-12 items-start">
         {/* Brand */}
         <div>
           <div className="mb-5">
-            <img src="/logo.png" alt="Crescent Haj Service" className="h-20 w-auto object-contain"
+            <img src="/logo.png" alt="Crescent Haj Service" className="h-16 sm:h-20 w-auto object-contain"
               style={{filter:'invert(1) hue-rotate(180deg) saturate(2) brightness(1.2)', opacity:0.95}} />
           </div>
           <p className="text-sm font-body leading-relaxed mb-5" style={{color:'rgba(250,248,243,0.55)'}}>
@@ -146,8 +146,8 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t py-6 px-6 flex flex-col sm:flex-row items-center justify-between gap-3" style={{borderColor:'rgba(201,168,76,0.1)'}}>
-        <p className="text-xs font-body text-center" style={{color:'rgba(250,248,243,0.35)'}}>
+      <div className="border-t py-6 px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 text-center sm:text-left" style={{borderColor:'rgba(201,168,76,0.1)'}}>
+        <p className="text-xs font-body" style={{color:'rgba(250,248,243,0.35)'}}>
           © 2026 Crescent Haj Service. All rights reserved. Serving pilgrims with sincerity since 2009.
         </p>
         <p className="text-xs font-body" style={{color:'rgba(250,248,243,0.25)'}}>
