@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const journeys = [
@@ -23,10 +24,30 @@ function CustomerReviews() {
   return <section className="customer-review-showcase"><div className="customer-review-heading"><div><span className="eyebrow">Customer reviews</span><h2>Trusted by pilgrims<br /><em>across every journey.</em></h2></div><a className="review-google-link" href="https://www.google.com/maps/place/Crescent+Haj+Service/reviews" target="_blank" rel="noreferrer">View all Google reviews <Arrow /></a></div><div className="customer-review-window"><div className="customer-review-track">{[...customerReviews, ...customerReviews].map((review, index) => <article className="customer-review-card" key={`${review.name}-${index}`}><div className="customer-review-top"><div className="reviewer-identity"><span className="reviewer-avatar">{review.initials}</span><div><strong>{review.name}</strong><small>{review.ago}</small></div></div><a className="google-review-badge" href={review.link} target="_blank" rel="noreferrer"><span>G</span> REVIEW</a></div><div className="customer-stars">★★★★★</div><p className="customer-review-text">“{review.text}”</p><div className="customer-review-footer"><div><small>Service experience</small><strong>{review.service}</strong></div><span className="review-verified">✓</span></div></article>)}</div></div><div className="customer-review-dots" aria-hidden="true"><span /><span className="active" /><span /><span /></div></section>
 }
 
+function GeneralEnquiryPopup() {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
+  return <>
+    <button className="refresh-button refresh-button-outline general-enquiry-trigger" type="button" onClick={() => setOpen(true)}>General enquiry</button>
+    {open && <div className="general-enquiry-modal" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setOpen(false) }}>
+      <div className="general-enquiry-dialog" role="dialog" aria-modal="true" aria-labelledby="general-enquiry-title">
+        <button className="general-enquiry-close" type="button" aria-label="Close general enquiry form" onClick={() => setOpen(false)}>×</button>
+        <h2 id="general-enquiry-title">General enquiry</h2>
+        <iframe title="General enquiry form" src="https://forms.zohopublic.in/GoimomiHolidays/form/WebsiteLead/formperma/EE3MFyvZhURPIlQK32BZ5cwdxx6DvziEjg70HxXJg5k?zf_rszfm=1" />
+      </div>
+    </div>}
+  </>
+}
+
 export default function Home() {
   const whatsapp = 'https://wa.me/918110082222?text=Assalamu%20Alaikum%2C%20I%20would%20like%20help%20choosing%20a%20Hajj%20or%20Umrah%20package.'
   return <main className="home-refresh">
-    <section className="refresh-hero"><img src="/hero-makkah-generated.png" alt="Masjid al-Haram in Makkah at dusk" /><div className="refresh-hero-shade" /><div className="refresh-hero-content"><p className="eyebrow-light">Crescent Haj Service · Trusted Since 2009 · 1000+ Happy Pilgrims</p><h1>Answer your heart's<br /><em>deepest calling.</em></h1><p className="hero-lede">Premium Hajj and Umrah packages combining spiritual guidance, luxury accommodations, and unwavering support. Make your pilgrimage a transformative journey, not a travel checklist.</p><div className="refresh-actions"><Link className="refresh-button refresh-button-gold" to="/umrah-packages">Start your journey <Arrow /></Link><a className="refresh-button refresh-button-outline" href={whatsapp} target="_blank" rel="noreferrer">Free consultation</a></div><div className="hero-note"><span className="live-dot" /> 24/7 WhatsApp support · India & UAE departures · Scholar-led groups</div></div><div className="hero-scroll">Scroll to explore <span /></div></section>
+    <section className="refresh-hero"><img src="/hero-makkah-generated.png" alt="Masjid al-Haram in Makkah at dusk" /><div className="refresh-hero-shade" /><div className="refresh-hero-content"><p className="eyebrow-light">Crescent Haj Service · Trusted Since 2009 · 1000+ Happy Pilgrims</p><h1>Answer your heart's<br /><em>deepest calling.</em></h1><p className="hero-lede">Premium Hajj and Umrah packages combining spiritual guidance, luxury accommodations, and unwavering support. Make your pilgrimage a transformative journey, not a travel checklist.</p><div className="refresh-actions"><Link className="refresh-button refresh-button-gold" to="/umrah-packages">Start your journey <Arrow /></Link><a className="refresh-button refresh-button-outline" href={whatsapp} target="_blank" rel="noreferrer">Free consultation</a><GeneralEnquiryPopup /></div><div className="hero-note"><span className="live-dot" /> 24/7 WhatsApp support · India & UAE departures · Scholar-led groups</div></div><div className="hero-scroll">Scroll to explore <span /></div></section>
 
     <section className="journey-section section-pad"><div className="section-heading-row"><div><span className="eyebrow">Discover your pilgrimage</span><h2>Three paths to spiritual<br /><em>fulfillment.</em></h2><p style={{ marginTop: '12px', fontSize: '1rem', color: 'rgba(26,26,26,0.65)' }}>Whether you're answering the call of Hajj (the fifth pillar) or seeking the blessing of Umrah, we offer thoughtfully curated journeys tailored to your needs, timeline, and spiritual goals.</p></div><Link className="text-link" to="/umrah-packages">View all packages <Arrow /></Link></div><div className="journey-grid">{journeys.map((item, index) => <Link to={item.path} className={`journey-card ${index === 1 ? 'featured' : ''}`} key={item.title}><img src={item.image} alt={item.title} /><div className="journey-card-shade" /><div className="journey-card-copy"><span>{item.tag}</span><h3>{item.title}</h3><p>{item.copy}</p><b>Explore details <Arrow /></b></div></Link>)}</div></section>
 
