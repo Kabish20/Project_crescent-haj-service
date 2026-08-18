@@ -1,11 +1,3 @@
-import { Link } from 'react-router-dom'
-
-const visaDetails = [
-  { label: 'Group Visa', value: 'Available for group pilgrims' },
-  { label: 'Visa cost', value: '11,200/-' },
-  { label: 'Bus', value: '69,160/-' },
-]
-
 const individualVisaDetails = [
   { label: '14 days', value: '13,950/-' },
   { label: '15 to 20 days', value: '14,950/-' },
@@ -16,12 +8,6 @@ const iqamaVisaDetails = [
   { label: 'Visa cost', value: 'Rs. 12,950/-' },
 ]
 
-const approvals = [
-  'Makkah hotel approval',
-  'Madinah hotel approval',
-  'Food catering approval in Makkah and Madinah',
-]
-
 const individualRequirements = [
   'Passport copy',
   'Flight ticket up and down',
@@ -29,7 +15,6 @@ const individualRequirements = [
 ]
 
 const visaVisuals = [
-  { title: 'Group Visa', copy: 'Coordinated arrangements for group pilgrims.', image: '/visa-group-generated.png', target: '#group-visa' },
   { title: 'Individual Visa', copy: 'Flexible options based on your stay duration.', image: '/visa-individual-generated.png', target: '#individual-visa' },
   { title: 'Visa with Iqama', copy: 'Longer-stay planning for up to 85 days.', image: '/visa-iqama-generated.png', target: '#iqama-visa' },
 ]
@@ -43,9 +28,9 @@ export default function Visa() {
         <div className="glow-orb opacity-50" style={{ top: '-40%', left: '-20%' }} />
         <div className="absolute inset-0 islamic-pattern opacity-20" />
         <div className="visa-hero-content">
-          <span className="visa-eyebrow">Group pilgrimage services</span>
-          <h1>Group Visa<br /><em>arranged with care.</em></h1>
-          <p>Clear visa, transport, accommodation, and catering arrangements for your group journey.</p>
+          <span className="visa-eyebrow">Umrah visa services</span>
+          <h1>Your visa,<br /><em>arranged with care.</em></h1>
+          <p>Clear visa options and essential travel requirements for your Umrah journey.</p>
         </div>
       </section>
 
@@ -68,25 +53,7 @@ export default function Visa() {
         </div>
       </section>
 
-      <section className="visa-details-section" id="group-visa">
-        <div className="visa-content-grid">
-          <div>
-            <span className="eyebrow">Visa package details</span>
-            <h2>Everything prepared<br /><em>for your group.</em></h2>
-            <p className="visa-copy">Our group arrangement brings together the essential approvals and travel support needed for a smoother pilgrimage experience.</p>
-            <Link className="refresh-button refresh-button-dark" to="/contact">Enquire about your group</Link>
-          </div>
-
-          <div className="visa-price-card">
-            {visaDetails.map(detail => (
-              <div className="visa-price-row" key={detail.label}>
-                <span>{detail.label}</span>
-                <strong>{detail.value}</strong>
-              </div>
-            ))}
-          </div>
-        </div>
-
+      <section className="visa-details-section">
         <div className="visa-individual-grid" id="individual-visa">
           <div>
             <span className="eyebrow">Individual visa</span>
@@ -120,16 +87,8 @@ export default function Visa() {
 
       <section className="visa-approvals-section">
         <div className="visa-approvals-content">
-          <span className="eyebrow">Included approvals</span>
-          <h2>Important arrangements<br /><em>covered for your stay.</em></h2>
-          <div className="visa-approval-list">
-            {approvals.map((approval, index) => (
-              <div className="visa-approval-item" key={approval}>
-                <span>0{index + 1}</span>
-                <strong>{approval}</strong>
-              </div>
-            ))}
-          </div>
+          <span className="eyebrow">Individual visa documents</span>
+          <h2>Everything needed<br /><em>for your application.</em></h2>
           <div className="visa-requirements">
             <span className="eyebrow">Individual visa requirements</span>
             <div className="visa-approval-list">
@@ -146,10 +105,10 @@ export default function Visa() {
 
       <section className="visa-cta">
         <div>
-          <span className="eyebrow-light">Ready to plan your group journey?</span>
-          <h2>Speak with our<br /><em>pilgrimage advisors.</em></h2>
+          <span className="eyebrow-light">Ready to plan your Umrah journey?</span>
+          <h2>Speak with our<br /><em>visa advisors.</em></h2>
         </div>
-        <a className="refresh-button refresh-button-gold" href="https://wa.me/918110082222?text=I%20would%20like%20details%20about%20the%20Group%20Visa%20package" target="_blank" rel="noreferrer">Get visa details</a>
+        <a className="refresh-button refresh-button-gold" href="https://wa.me/918110082222?text=I%20would%20like%20details%20about%20Umrah%20visa%20options" target="_blank" rel="noreferrer">Get visa details</a>
       </section>
     </main>
   )
