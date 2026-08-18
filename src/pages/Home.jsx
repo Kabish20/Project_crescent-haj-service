@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const journeys = [
@@ -12,12 +11,9 @@ const included = [['Visa assistance', 'Guidance through the documentation and ap
 function Arrow() { return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M5 12h14M13 6l6 6-6 6" /></svg> }
 
 export default function Home() {
-  const [journey, setJourney] = useState('Umrah')
   const whatsapp = 'https://wa.me/918110082222?text=Assalamu%20Alaikum%2C%20I%20would%20like%20help%20choosing%20a%20Hajj%20or%20Umrah%20package.'
   return <main className="home-refresh">
     <section className="refresh-hero"><img src="/hero-makkah-generated.png" alt="Masjid al-Haram in Makkah at dusk" /><div className="refresh-hero-shade" /><div className="refresh-hero-content"><p className="eyebrow-light">Crescent Haj Service · Since 2009</p><h1>Your sacred journey,<br /><em>planned with care.</em></h1><p className="hero-lede">Trusted Hajj and Umrah services with thoughtful packages, practical guidance and support you can rely on.</p><div className="refresh-actions"><Link className="refresh-button refresh-button-gold" to="/umrah-packages">Explore packages <Arrow /></Link><a className="refresh-button refresh-button-outline" href={whatsapp} target="_blank" rel="noreferrer">Speak to an advisor</a></div><div className="hero-note"><span className="live-dot" /> Advisors available on WhatsApp · Chennai & UAE departures</div></div><div className="hero-scroll">Scroll to explore <span /></div></section>
-
-    <section className="quick-find" id="packages"><div className="quick-find-intro"><span className="eyebrow">Start here</span><h2>Find the right journey<br />for your family.</h2></div><div className="quick-find-form"><div className="journey-toggle" role="tablist" aria-label="Journey type">{['Hajj', 'Umrah'].map(item => <button key={item} className={journey === item ? 'active' : ''} onClick={() => setJourney(item)}>{item}</button>)}</div><label>Departure city<select defaultValue="Chennai"><option>Chennai</option><option>Trichy</option><option>Bengaluru</option><option>Hyderabad</option><option>Dubai</option></select></label><label>Travel month<select defaultValue="I am flexible"><option>I am flexible</option><option>September</option><option>October</option><option>November</option><option>December</option></select></label><Link to={journey === 'Hajj' ? '/hajj-packages' : '/umrah-packages'} className="find-button">View {journey} options <Arrow /></Link></div></section>
 
     <section className="journey-section section-pad"><div className="section-heading-row"><div><span className="eyebrow">Choose your path</span><h2>Journeys for every<br /><em>kind of traveller.</em></h2></div><Link className="text-link" to="/umrah-packages">View all packages <Arrow /></Link></div><div className="journey-grid">{journeys.map((item, index) => <Link to={item.path} className={`journey-card ${index === 1 ? 'featured' : ''}`} key={item.title}><img src={item.image} alt={item.title} /><div className="journey-card-shade" /><div className="journey-card-copy"><span>{item.tag}</span><h3>{item.title}</h3><p>{item.copy}</p><b>Discover more <Arrow /></b></div></Link>)}</div></section>
 
@@ -25,7 +21,7 @@ export default function Home() {
 
     <section className="included-section section-pad"><div className="included-visual"><img src="/madinah_mosque.png" alt="Masjid an-Nabawi in Madinah" /><div className="visual-caption"><span>Built around you</span><strong>From first call<br />to homecoming.</strong></div></div><div className="included-copy"><span className="eyebrow">What we take care of</span><h2>Everything you need,<br /><em>beautifully organised.</em></h2><div className="included-grid">{included.map((item, i) => <div key={item[0]}><span>0{i + 1}</span><h3>{item[0]}</h3><p>{item[1]}</p></div>)}</div><Link className="refresh-button refresh-button-dark" to="/contact">Plan my journey <Arrow /></Link></div></section>
 
-    <section className="testimonial-section"><div className="quote-mark">“</div><blockquote>We were guided with patience at every stage. The whole family felt looked after from the first conversation.</blockquote><p>— A Crescent pilgrim family</p><div className="rating">★★★★★ <span>Trusted by 1,000+ pilgrims</span></div></section>
+    <section className="testimonial-section"><div className="quote-mark">“</div><blockquote>We were guided with patience at every stage. The whole family felt looked after from the first conversation.</blockquote><p>— A Crescent pilgrim family</p><div className="rating">★★★★★ <span>Trusted by 1,000+ pilgrims</span></div><a className="testimonial-youtube-link" href="https://www.youtube.com/@CRESCENTHAJSERVICE/videos" target="_blank" rel="noreferrer">Watch customer videos on YouTube <Arrow /></a></section>
     <section className="final-cta"><div><span className="eyebrow-light">Your journey starts with a conversation</span><h2>Ready to take<br /><em>the first step?</em></h2></div><a className="refresh-button refresh-button-gold" href={whatsapp} target="_blank" rel="noreferrer">Chat with an advisor <Arrow /></a></section>
     <div className="mobile-action-bar"><Link to="/umrah-packages">Packages</Link><a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a><a href="tel:+918110082222">Call us</a></div>
   </main>
