@@ -25,7 +25,7 @@ function CustomerReviews() {
 }
 
 function GeneralEnquiryPopup() {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -33,7 +33,6 @@ function GeneralEnquiryPopup() {
   }, [open])
 
   return <>
-    <button className="refresh-button refresh-button-outline general-enquiry-trigger" type="button" onClick={() => setOpen(true)}>General enquiry</button>
     {open && <div className="general-enquiry-modal" role="presentation" onMouseDown={event => { if (event.target === event.currentTarget) setOpen(false) }}>
       <div className="general-enquiry-dialog" role="dialog" aria-modal="true" aria-labelledby="general-enquiry-title">
         <button className="general-enquiry-close" type="button" aria-label="Close general enquiry form" onClick={() => setOpen(false)}>×</button>
@@ -47,7 +46,7 @@ function GeneralEnquiryPopup() {
 export default function Home() {
   const whatsapp = 'https://wa.me/918110082222?text=Assalamu%20Alaikum%2C%20I%20would%20like%20help%20choosing%20a%20Hajj%20or%20Umrah%20package.'
   return <main className="home-refresh">
-    <section className="refresh-hero"><img src="/hero-makkah-generated.png" alt="Masjid al-Haram in Makkah at dusk" /><div className="refresh-hero-shade" /><div className="refresh-hero-content"><p className="eyebrow-light">Crescent Haj Service · Trusted Since 2009 · 1000+ Happy Pilgrims</p><h1>Answer your heart's<br /><em>deepest calling.</em></h1><p className="hero-lede">Premium Hajj and Umrah packages combining spiritual guidance, luxury accommodations, and unwavering support. Make your pilgrimage a transformative journey, not a travel checklist.</p><div className="refresh-actions"><Link className="refresh-button refresh-button-gold" to="/umrah-packages">Start your journey <Arrow /></Link><a className="refresh-button refresh-button-outline" href={whatsapp} target="_blank" rel="noreferrer">Free consultation</a><GeneralEnquiryPopup /></div><div className="hero-note"><span className="live-dot" /> 24/7 WhatsApp support · India & UAE departures · Scholar-led groups</div></div><div className="hero-scroll">Scroll to explore <span /></div></section>
+    <section className="refresh-hero"><img src="/hero-makkah-generated.png" alt="Masjid al-Haram in Makkah at dusk" /><div className="refresh-hero-shade" /><div className="refresh-hero-content"><p className="eyebrow-light">Crescent Haj Service · Trusted Since 2009 · 1000+ Happy Pilgrims</p><h1>Answer your heart's<br /><em>deepest calling.</em></h1><p className="hero-lede">Premium Hajj and Umrah packages combining spiritual guidance, luxury accommodations, and unwavering support. Make your pilgrimage a transformative journey, not a travel checklist.</p><div className="refresh-actions"><Link className="refresh-button refresh-button-gold" to="/umrah-packages">Start your journey <Arrow /></Link><a className="refresh-button refresh-button-outline" href={whatsapp} target="_blank" rel="noreferrer">Free consultation</a></div><div className="hero-note"><span className="live-dot" /> 24/7 WhatsApp support · India & UAE departures · Scholar-led groups</div></div><div className="hero-scroll">Scroll to explore <span /></div><GeneralEnquiryPopup /></section>
 
     <section className="journey-section section-pad"><div className="section-heading-row"><div><span className="eyebrow">Discover your pilgrimage</span><h2>Three paths to spiritual<br /><em>fulfillment.</em></h2><p style={{ marginTop: '12px', fontSize: '1rem', color: 'rgba(26,26,26,0.65)' }}>Whether you're answering the call of Hajj (the fifth pillar) or seeking the blessing of Umrah, we offer thoughtfully curated journeys tailored to your needs, timeline, and spiritual goals.</p></div><Link className="text-link" to="/umrah-packages">View all packages <Arrow /></Link></div><div className="journey-grid">{journeys.map((item, index) => <Link to={item.path} className={`journey-card ${index === 1 ? 'featured' : ''}`} key={item.title}><img src={item.image} alt={item.title} /><div className="journey-card-shade" /><div className="journey-card-copy"><span>{item.tag}</span><h3>{item.title}</h3><p>{item.copy}</p><b>Explore details <Arrow /></b></div></Link>)}</div></section>
 

@@ -114,7 +114,6 @@ section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
 .refresh-button-gold:hover { background: #e6ca7b; }
 .refresh-button-outline { color: white; border: 1px solid rgba(255,255,255,.35); }
 .refresh-button-outline:hover { background: rgba(255,255,255,.1); }
-.general-enquiry-trigger { cursor: pointer; font: 700 10px/1 'Manrope', sans-serif; }
 .general-enquiry-modal { position: fixed; inset: 0; z-index: 100000; display: grid; place-items: center; padding: 30px; background: rgba(0,0,0,.8); }
 .general-enquiry-dialog { width: min(900px, 100%); height: min(768px, calc(100vh - 60px)); position: relative; overflow: hidden; border-radius: 12px; background: #fff; box-shadow: 0 24px 80px rgba(0,0,0,.35); }
 .general-enquiry-dialog h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
