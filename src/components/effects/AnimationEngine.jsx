@@ -16,10 +16,15 @@ function initPersistent() {
   progressBar = document.createElement('div')
   progressBar.id = 'scroll-progress-bar'
   Object.assign(progressBar.style, {
-    position: 'fixed', top: '0', left: '0', height: '2px', width: '0%',
+    position: 'fixed',
+    top: '0',
+    left: '0',
+    height: '2px',
+    width: '0%',
     background: 'linear-gradient(90deg, var(--gold), #f5e6b8, var(--gold-light), var(--gold))',
     backgroundSize: '300%',
-    zIndex: '99999', pointerEvents: 'none',
+    zIndex: '99999',
+    pointerEvents: 'none',
     boxShadow: '0 0 12px rgba(201,168,76,0.7), 0 0 30px rgba(201,168,76,0.3)',
     animation: 'barShimmer 2.5s linear infinite',
     transition: 'width 0.08s linear',
@@ -63,7 +68,6 @@ function initPersistent() {
 
 /* ─── Route-refreshed effects ─── */
 function initRouteEffects() {
-
   // ── 3D Tilt via delegation ──
   const tiltMove = (e) => {
     const card = e.target.closest('.tilt-card')
@@ -173,10 +177,15 @@ function initRouteEffects() {
       const size = 3 + Math.random() * 5
       const p = document.createElement('div')
       Object.assign(p.style, {
-        position: 'fixed', left: cx + 'px', top: cy + 'px',
-        width: size + 'px', height: size + 'px',
+        position: 'fixed',
+        left: cx + 'px',
+        top: cy + 'px',
+        width: size + 'px',
+        height: size + 'px',
         background: i % 3 === 0 ? 'var(--gold-light)' : 'var(--gold)',
-        borderRadius: '50%', pointerEvents: 'none', zIndex: '99999',
+        borderRadius: '50%',
+        pointerEvents: 'none',
+        zIndex: '99999',
         '--tx': Math.cos(angle) * speed + 'px',
         '--ty': Math.sin(angle) * speed + 'px',
         animation: `burstOut 0.7s cubic-bezier(0.22,1,0.36,1) ${Math.random() * 0.06}s forwards`,
@@ -198,7 +207,8 @@ function initRouteEffects() {
     ripple.className = 'ripple-wave'
     const size = Math.max(r.width, r.height) * 2
     Object.assign(ripple.style, {
-      width: size + 'px', height: size + 'px',
+      width: size + 'px',
+      height: size + 'px',
       left: (e.clientX - r.left - size / 2) + 'px',
       top: (e.clientY - r.top - size / 2) + 'px',
     })

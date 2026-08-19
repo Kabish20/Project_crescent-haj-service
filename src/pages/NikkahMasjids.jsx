@@ -1,25 +1,21 @@
-import { useReveal } from '../components/ScrollReveal'
 import { Link } from 'react-router-dom'
-
-const processSteps = [
-  { step: '1', title: 'Consultation & Eligibility', desc: 'We discuss your requirements, check residency status, and verify if the bride, groom, and Wali meet Saudi legal requirements for Nikkah.' },
-  { step: '2', title: 'Document Preparation', desc: 'Our team guides you on gathering necessary passports, visas, consent letters, and identity documents required by Saudi authorities.' },
-  { step: '3', title: 'Booking Flights & Hotels', desc: 'We arrange comfortable flights and premium family suites in hotels near the Haram for the wedding party and guests.' },
-  { step: '4', title: 'Coordination with Scholar', desc: 'We coordinate with an authorized Islamic scholar (Maazoon) in Makkah or Madinah who is legally permitted to perform and register the Nikkah.' },
-  { step: '5', title: 'The Blessed Ceremony', desc: 'The Nikkah is performed in the serene environment of the Haramain, followed by prayers and supplications for the couple.' },
-  { step: '6', title: 'Certification & Umrah', desc: 'We assist with obtaining the official marriage certificate, after which the family can perform a group Umrah in immense gratitude.' },
-]
+import { useScrollReveal } from '@/hooks'
+import { NIKKAH_PROCESS_STEPS } from '@/data'
 
 export default function NikkahMasjids() {
-  useReveal()
+  useScrollReveal()
+
   return (
     <div>
+      {/* Hero */}
       <div className="relative pt-20 sm:pt-32 pb-12 sm:pb-20 text-center overflow-hidden" style={{ background: 'var(--dark-bg)' }}>
         <div className="glow-orb opacity-50" style={{ top: '-40%', left: '-20%' }} />
         <div className="absolute inset-0 islamic-pattern opacity-20" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
-          <span className="inline-block text-xs font-body font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
-            style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', color: 'var(--gold)' }}>
+          <span
+            className="inline-block text-xs font-body font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5"
+            style={{ background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.3)', color: 'var(--gold)' }}
+          >
             A Sacred Union
           </span>
           <h1 className="font-heading text-5xl md:text-6xl font-bold mb-6" style={{ color: 'var(--pearl)' }}>Nikkah in Holy Masjids</h1>
@@ -29,10 +25,16 @@ export default function NikkahMasjids() {
         </div>
       </div>
 
+      {/* Blessing Section */}
       <section className="py-20" style={{ background: 'var(--sand)' }}>
         <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
           <div className="reveal-left">
-            <img src="/madinah_mosque.png" alt="Madinah Mosque for Nikkah" className="rounded-3xl shadow-2xl w-full border-4" style={{ borderColor: 'rgba(201,168,76,0.3)' }} />
+            <img
+              src="/madinah_mosque.png"
+              alt="Madinah Mosque for Nikkah"
+              className="rounded-3xl shadow-2xl w-full border-4"
+              style={{ borderColor: 'rgba(201,168,76,0.3)' }}
+            />
           </div>
           <div className="reveal-right">
             <h2 className="font-heading text-4xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>The Ultimate Blessing</h2>
@@ -48,8 +50,8 @@ export default function NikkahMasjids() {
                 'Full Legal Document Assistance',
                 'Premium Family Hotel Suites near Haram',
                 'VIP Transport for the Wedding Party',
-                'Wheelchair Assistance for Elders'
-              ].map(item => (
+                'Wheelchair Assistance for Elders',
+              ].map((item) => (
                 <li key={item} className="flex items-center gap-3 font-body text-sm font-semibold" style={{ color: 'var(--emerald)' }}>
                   <span className="w-5 h-5 rounded-full flex items-center justify-center shrink-0" style={{ background: 'var(--gold)', color: 'white', fontSize: '10px' }}>✓</span>
                   {item}
@@ -60,6 +62,7 @@ export default function NikkahMasjids() {
         </div>
       </section>
 
+      {/* Process Steps */}
       <section className="py-20" style={{ background: 'var(--pearl)' }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16 reveal">
@@ -70,11 +73,13 @@ export default function NikkahMasjids() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-20">
-            {processSteps.map((p, i) => (
+            {NIKKAH_PROCESS_STEPS.map((p, i) => (
               <div key={p.step} className="glass-card-light p-8 rounded-2xl reveal flex gap-6" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="shrink-0">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center font-heading text-2xl font-bold shadow-inner"
-                    style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', color: 'white' }}>
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center font-heading text-2xl font-bold shadow-inner"
+                    style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', color: 'white' }}
+                  >
                     {p.step}
                   </div>
                 </div>
@@ -96,8 +101,12 @@ export default function NikkahMasjids() {
           <div className="mt-16 text-center reveal">
             <h2 className="font-heading text-3xl font-bold mb-6" style={{ color: 'var(--emerald)' }}>Start Planning Your Blessed Day</h2>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://wa.me/918110082222?text=I%20would%20like%20to%20consult%20about%20arranging%20a%20Nikkah%20in%20Makkah/Madinah" target="_blank" rel="noopener noreferrer"
-                className="btn-gold px-10 py-4 rounded-full font-body font-bold text-sm inline-block shadow-xl">
+              <a
+                href="https://wa.me/918110082222?text=I%20would%20like%20to%20consult%20about%20arranging%20a%20Nikkah%20in%20Makkah/Madinah"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold px-10 py-4 rounded-full font-body font-bold text-sm inline-block shadow-xl"
+              >
                 Consult on WhatsApp
               </a>
               <Link to="/contact" className="btn-emerald px-10 py-4 rounded-full font-body font-bold text-sm shadow-xl">

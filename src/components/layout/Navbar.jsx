@@ -1,21 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-
-const navLinks = [
-  { label: 'Home', path: '/' },
-  {
-    label: 'Packages',
-    dropdown: [
-      { label: 'Umrah Packages', path: '/umrah-packages' },
-      { label: 'Customized Umrah & Hajj', path: '/customizedumrah' },
-    ]
-  },
-  { label: 'Visa', path: '/visa' },
-  { label: 'Ziyarat', path: '/ziyarat-tours' },
-  { label: 'Nikkah Services', path: '/nikkah-masjids' },
-  { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
-]
+import { NAV_LINKS, CONTACT_INFO } from '@/constants'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -43,7 +28,9 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = ''
     }
-    return () => { document.body.style.overflow = '' }
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [mobileOpen])
 
   return (
@@ -69,7 +56,7 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) =>
+            {NAV_LINKS.map((link) =>
               link.dropdown ? (
                 <div
                   key={link.label}
@@ -79,13 +66,15 @@ export default function Navbar() {
                 >
                   <button
                     className="px-4 py-2 text-sm font-body font-medium transition-colors rounded-lg flex items-center gap-1"
-                    style={{color: scrolled ? 'rgba(250,248,243,0.8)' : 'rgba(250,248,243,0.9)'}}
+                    style={{ color: scrolled ? 'rgba(250,248,243,0.8)' : 'rgba(250,248,243,0.9)' }}
                   >
                     {link.label}
                     <svg
                       className="w-3 h-3 opacity-70 transition-transform duration-200"
                       style={{ transform: activeDropdown === link.label ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -106,22 +95,30 @@ export default function Navbar() {
                         backdropFilter: 'blur(20px)',
                       }}
                     >
-                      {link.dropdown.map(item => {
-                        const isExternal = item.path.startsWith('http');
-                        const linkProps = isExternal ? { href: item.path } : { to: item.path };
-                        const LinkComponent = isExternal ? 'a' : Link;
+                      {link.dropdown.map((item) => {
+                        const isExternal = item.path.startsWith('http')
+                        const linkProps = isExternal ? { href: item.path } : { to: item.path }
+                        const LinkComponent = isExternal ? 'a' : Link
                         return (
                           <LinkComponent
                             key={item.path}
                             {...linkProps}
                             className="block px-5 py-3 text-sm font-body font-medium transition-all"
-                            style={{color:'rgba(250,248,243,0.8)', borderBottom:'1px solid rgba(201,168,76,0.1)'}}
-                            onMouseEnter={e => { e.currentTarget.style.color = 'var(--gold)'; e.currentTarget.style.background = 'rgba(201,168,76,0.08)'; e.currentTarget.style.paddingLeft = '28px'; }}
-                            onMouseLeave={e => { e.currentTarget.style.color = 'rgba(250,248,243,0.8)'; e.currentTarget.style.background = 'transparent'; e.currentTarget.style.paddingLeft = '20px'; }}
+                            style={{ color: 'rgba(250,248,243,0.8)', borderBottom: '1px solid rgba(201,168,76,0.1)' }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.color = 'var(--gold)'
+                              e.currentTarget.style.background = 'rgba(201,168,76,0.08)'
+                              e.currentTarget.style.paddingLeft = '28px'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.color = 'rgba(250,248,243,0.8)'
+                              e.currentTarget.style.background = 'transparent'
+                              e.currentTarget.style.paddingLeft = '20px'
+                            }}
                           >
                             {item.label}
                           </LinkComponent>
-                        );
+                        )
                       })}
                     </div>
                   </div>
@@ -131,10 +128,20 @@ export default function Navbar() {
                   key={link.path}
                   to={link.path}
                   className="px-4 py-2 text-sm font-body font-medium transition-all rounded-lg relative group"
-                  style={{color: location.pathname === link.path ? 'var(--gold)' : (scrolled ? 'rgba(250,248,243,0.8)' : 'rgba(250,248,243,0.9)')}}
+                  style={{
+                    color:
+                      location.pathname === link.path
+                        ? 'var(--gold)'
+                        : scrolled
+                        ? 'rgba(250,248,243,0.8)'
+                        : 'rgba(250,248,243,0.9)',
+                  }}
                 >
                   {link.label}
-                  <span className="absolute bottom-1 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform origin-left" style={{background:'var(--gold)'}}></span>
+                  <span
+                    className="absolute bottom-1 left-4 right-4 h-px scale-x-0 group-hover:scale-x-100 transition-transform origin-left"
+                    style={{ background: 'var(--gold)' }}
+                  />
                 </Link>
               )
             )}
@@ -143,14 +150,14 @@ export default function Navbar() {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="https://wa.me/918110082222?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20Umrah%20packages."
+              href={CONTACT_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold px-5 py-2.5 rounded-full text-sm font-body font-bold flex items-center gap-2"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M11.997 2C6.477 2 2 6.477 2 12c0 1.822.482 3.531 1.325 5.012L2 22l5.132-1.308A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 11.997 2z" opacity=".3"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M11.997 2C6.477 2 2 6.477 2 12c0 1.822.482 3.531 1.325 5.012L2 22l5.132-1.308A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 11.997 2z" opacity=".3" />
               </svg>
               WhatsApp Advisor
             </a>
@@ -168,7 +175,7 @@ export default function Navbar() {
               className="block w-6 h-0.5 transition-all duration-300 origin-center"
               style={{
                 background: 'var(--gold)',
-                transform: mobileOpen ? 'translateY(8px) rotate(45deg)' : 'none'
+                transform: mobileOpen ? 'translateY(8px) rotate(45deg)' : 'none',
               }}
             />
             <span
@@ -176,14 +183,14 @@ export default function Navbar() {
               style={{
                 background: 'var(--gold)',
                 opacity: mobileOpen ? 0 : 1,
-                transform: mobileOpen ? 'scaleX(0)' : 'scaleX(1)'
+                transform: mobileOpen ? 'scaleX(0)' : 'scaleX(1)',
               }}
             />
             <span
               className="block w-6 h-0.5 transition-all duration-300 origin-center"
               style={{
                 background: 'var(--gold)',
-                transform: mobileOpen ? 'translateY(-8px) rotate(-45deg)' : 'none'
+                transform: mobileOpen ? 'translateY(-8px) rotate(-45deg)' : 'none',
               }}
             />
           </button>
@@ -238,7 +245,7 @@ export default function Navbar() {
 
           {/* Nav Links */}
           <nav className="flex-1 px-6 py-4 space-y-1">
-            {navLinks.map((link) =>
+            {NAV_LINKS.map((link) =>
               link.dropdown ? (
                 <div key={link.label}>
                   <button
@@ -250,7 +257,9 @@ export default function Navbar() {
                     <svg
                       className="w-4 h-4 transition-transform duration-200"
                       style={{ transform: mobileExpanded === link.label ? 'rotate(180deg)' : 'rotate(0deg)', color: 'var(--gold)' }}
-                      fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
@@ -264,24 +273,30 @@ export default function Navbar() {
                     }}
                   >
                     <div className="py-2 pl-2 space-y-0.5" style={{ background: 'rgba(201,168,76,0.04)', borderRadius: '8px', marginBottom: '4px' }}>
-                      {link.dropdown.map(item => {
-                        const isExternal = item.path.startsWith('http');
-                        const linkProps = isExternal ? { href: item.path } : { to: item.path };
-                        const LinkComponent = isExternal ? 'a' : Link;
+                      {link.dropdown.map((item) => {
+                        const isExternal = item.path.startsWith('http')
+                        const linkProps = isExternal ? { href: item.path } : { to: item.path }
+                        const LinkComponent = isExternal ? 'a' : Link
                         return (
                           <LinkComponent
                             key={item.path}
                             {...linkProps}
                             className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-body transition-all"
                             style={{ color: location.pathname === item.path ? 'var(--gold)' : 'rgba(250,248,243,0.65)' }}
-                            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(201,168,76,0.08)'; e.currentTarget.style.color = 'var(--gold)'; }}
-                            onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = location.pathname === item.path ? 'var(--gold)' : 'rgba(250,248,243,0.65)'; }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.background = 'rgba(201,168,76,0.08)'
+                              e.currentTarget.style.color = 'var(--gold)'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.background = 'transparent'
+                              e.currentTarget.style.color = location.pathname === item.path ? 'var(--gold)' : 'rgba(250,248,243,0.65)'
+                            }}
                             onClick={() => setMobileOpen(false)}
                           >
                             <span className="w-1 h-1 rounded-full shrink-0" style={{ background: 'var(--gold)', opacity: 0.5 }} />
                             {item.label}
                           </LinkComponent>
-                        );
+                        )
                       })}
                     </div>
                   </div>
@@ -293,7 +308,7 @@ export default function Navbar() {
                   className="flex items-center justify-between py-3.5 text-sm font-body font-medium transition-colors"
                   style={{
                     color: location.pathname === link.path ? 'var(--gold)' : 'rgba(250,248,243,0.85)',
-                    borderBottom: '1px solid rgba(201,168,76,0.08)'
+                    borderBottom: '1px solid rgba(201,168,76,0.08)',
                   }}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -309,30 +324,30 @@ export default function Navbar() {
           {/* Mobile Footer */}
           <div className="px-6 pb-8 pt-4 space-y-3" style={{ borderTop: '1px solid rgba(201,168,76,0.12)' }}>
             <a
-              href="https://wa.me/918110082222"
+              href={CONTACT_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold w-full py-3.5 rounded-full text-sm font-bold text-center flex items-center justify-center gap-2"
               onClick={() => setMobileOpen(false)}
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               WhatsApp Advisor
             </a>
             <a
-              href="tel:+918110082222"
+              href={CONTACT_INFO.phoneTel}
               className="w-full py-3.5 rounded-full text-sm font-bold text-center flex items-center justify-center gap-2 font-body transition-all"
               style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.25)', color: 'var(--gold)' }}
               onClick={() => setMobileOpen(false)}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
               </svg>
-              Call: +91 8110082222
+              Call: {CONTACT_INFO.phoneDisplay}
             </a>
             <p className="text-center text-xs font-body" style={{ color: 'rgba(201,168,76,0.4)' }}>
-              Mon–Sat · 9am–7pm IST
+              {CONTACT_INFO.workingHours} IST
             </p>
           </div>
         </div>
