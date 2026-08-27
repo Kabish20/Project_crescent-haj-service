@@ -113,19 +113,21 @@ export default function Home() {
             View all packages <ArrowIcon />
           </Link>
         </div>
-        <div className="journey-grid">
-          {HOME_JOURNEYS.map((item, index) => (
-            <Link to={item.path} className={`journey-card ${index === 1 ? 'featured' : ''}`} key={item.title}>
-              <img src={item.image} alt={item.title} />
-              <div className="journey-card-shade" />
-              <div className="journey-card-copy">
-                <span>{item.tag}</span>
-                <h3>{item.title}</h3>
-                <p>{item.copy}</p>
-                <b>Explore details <ArrowIcon /></b>
-              </div>
-            </Link>
-          ))}
+        <div className="journey-marquee-window" aria-label="Featured pilgrimage journeys">
+          <div className="journey-marquee-track">
+            {[...HOME_JOURNEYS, ...HOME_JOURNEYS].map((item, index) => (
+              <Link to={item.path} className={`journey-card ${index % HOME_JOURNEYS.length === 1 ? 'featured' : ''}`} key={`${item.title}-${index}`}>
+                <img src={item.image} alt={item.title} />
+                <div className="journey-card-shade" />
+                <div className="journey-card-copy">
+                  <span>{item.tag}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                  <b>Explore details <ArrowIcon /></b>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

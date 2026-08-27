@@ -129,8 +129,10 @@ section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
 .section-pad { width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); margin: 0 auto; padding-top: clamp(60px, 8vw, 105px); padding-bottom: clamp(60px, 8vw, 105px); }
 .section-heading-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 30px; margin-bottom: 42px; flex-wrap: wrap; }
 .text-link { display: inline-flex; align-items: center; gap: 8px; color: #9c7b2b; text-decoration: none; text-transform: uppercase; letter-spacing: .1em; font: 700 10px 'Manrope', sans-serif; white-space: nowrap; }
-.journey-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: clamp(12px, 3vw, 18px); }
-.journey-card { min-height: clamp(360px, 50vw, 445px); position: relative; overflow: hidden; color: #fff; text-decoration: none; background: #163c32; border-radius: 8px; }
+.journey-marquee-window { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; padding: 18px 0 24px; }
+.journey-marquee-track { display: flex; width: max-content; gap: clamp(12px, 3vw, 18px); padding: 0 max(var(--content-gutter), 24px); animation: journeyMarquee 42s linear infinite; }
+.journey-marquee-window:hover .journey-marquee-track { animation-play-state: paused; }
+.journey-card { width: clamp(280px, 29vw, 360px); min-height: clamp(360px, 50vw, 445px); flex: 0 0 auto; position: relative; overflow: hidden; color: #fff; text-decoration: none; background: #163c32; border-radius: 8px; }
 .journey-card img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; transition: transform .7s ease; }
 .journey-card:hover img { transform: scale(1.06); }
 .journey-card-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,24,20,.94), rgba(5,24,20,.04) 75%); }
@@ -140,6 +142,7 @@ section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
 .journey-card p { min-height: 55px; color: rgba(255,255,255,.68); font: 13px/1.55 'Manrope', sans-serif; }
 .journey-card b { display: flex; gap: 7px; align-items: center; margin-top: 18px; color: #fff; font: 700 10px 'Manrope', sans-serif; text-transform: uppercase; letter-spacing: .1em; }
 .journey-card.featured { transform: translateY(-18px); }
+@keyframes journeyMarquee { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 9px)); } }
 .proof-section { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(30px, 6vw, 100px); align-items: start; background: #f1ecdf; border-radius: 12px; overflow: hidden; padding: clamp(30px, 5vw, 50px); }
 .proof-intro, .benefit-list { min-width: 0; }
 .proof-intro p { max-width: 440px; margin: 24px 0; color: #6f746e; font: 15px/1.75 'Manrope', sans-serif; }
@@ -288,9 +291,10 @@ section[id], h1, h2, h3 { scroll-margin-top: 7rem; }
   .section-pad { padding-top: clamp(50px, 6vw, 80px); padding-bottom: clamp(50px, 6vw, 80px); }
   .section-heading-row, .final-cta { align-items: center; flex-direction: column; text-align: center; }
   .section-heading-row > div:first-child { width: 100%; }
-  .journey-grid, .proof-section, .included-section { grid-template-columns: 1fr; gap: clamp(25px, 5vw, 40px); }
+  .proof-section, .included-section { grid-template-columns: 1fr; gap: clamp(25px, 5vw, 40px); }
   .journey-card { min-height: clamp(340px, 50vw, 390px); }
-  .journey-card.featured { transform: none; }
+  .journey-card { width: min(78vw, 340px); }
+  .journey-card.featured { transform: translateY(-10px); }
   .included-visual { min-height: clamp(340px, 55vw, 440px); }
   .proof-intro p { max-width: 100%; margin: clamp(16px, 3vw, 24px) auto; }
   .benefit-list { width: 100%; }

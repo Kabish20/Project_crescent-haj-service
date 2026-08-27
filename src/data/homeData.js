@@ -2,23 +2,37 @@ export const HOME_JOURNEYS = [
   {
     title: 'Hajj packages',
     copy: 'Embark on the fifth pillar of Islam. Complete group packages with scholar guidance, premium hotels, and spiritual mentorship at every step.',
-    image: '/hajj_banner.png',
+    image: '/journey-01.png',
     path: '/hajj-packages',
     tag: 'Seasonal departures'
   },
   {
     title: 'Umrah from India',
     copy: 'Experience the profound blessing of Umrah with well-planned packages from major Indian cities. Local guides, Indian cuisine, and seamless visa processing.',
-    image: '/umrah_india.png',
+    image: '/journey-02.png',
     path: '/umrah-india',
     tag: 'Popular choice'
   },
   {
     title: 'Tailor-made Umrah',
     copy: 'Customize your sacred journey — choose your dates, preferred hotels, and family companions. A private itinerary built just for you.',
-    image: '/tailor_made.png',
+    image: '/journey-03.png',
     path: '/tailor-made',
     tag: 'Made for you'
+  },
+  {
+    title: 'Madinah ziyarat',
+    copy: 'Explore the sacred landmarks of Madinah with knowledgeable guidance, thoughtful pacing, and space for reflection.',
+    image: '/journey-04.png',
+    path: '/ziyarat-tours',
+    tag: 'Sacred landmarks'
+  },
+  {
+    title: 'Complete support',
+    copy: 'From airport arrival to your return home, our on-ground team keeps every movement comfortable, clear, and cared for.',
+    image: '/journey-05.png',
+    path: '/contact',
+    tag: 'Peace of mind'
   },
 ]
 
