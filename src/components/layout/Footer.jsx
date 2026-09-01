@@ -162,13 +162,11 @@ export default function Footer() {
               </div>
               <div className="text-sm font-body leading-relaxed" style={{ color: 'rgba(250,248,243,0.55)' }}>
                 {CONTACT_INFO.offices.map((office, idx) => (
-                  <p key={office.label} className={idx > 0 ? 'mt-3' : ''}>
-                    <strong style={{ color: 'rgba(250,248,243,0.8)' }}>{office.city}, {office.country}</strong>
-                    <br />
-                    {office.label}
-                    <br />
-                    {office.value}
-                  </p>
+                  <div key={office.label} className={idx > 0 ? 'mt-3.5 pt-3.5' : ''} style={idx > 0 ? { borderTop: '1px solid rgba(250,248,243,0.08)' } : {}}>
+                    <strong style={{ color: 'rgba(250,248,243,0.9)' }}>{office.city}, {office.country}</strong>
+                    <p className="text-xs font-semibold uppercase tracking-wider mt-0.5" style={{ color: 'var(--gold)' }}>{office.label}</p>
+                    <p className="mt-0.5 leading-relaxed text-xs sm:text-sm" style={{ color: 'rgba(250,248,243,0.6)' }}>{office.value}</p>
+                  </div>
                 ))}
               </div>
             </div>

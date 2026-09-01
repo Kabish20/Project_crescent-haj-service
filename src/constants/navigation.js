@@ -24,5 +24,8 @@ export const FOOTER_LINKS = {
     { label: 'Nikkah in Holy Masjids', path: '/nikkah-masjids' },
     { label: 'About Us', path: '/about' },
     { label: 'Contact', path: '/contact' },
+    { label: 'Privacy Policy', path: '/privacy-policy' },
+    { label: 'Terms & Conditions', path: '/terms-conditions' },
+    { label: 'Cancellation Policy', path: '/cancellation-policy' },
   ]
 }

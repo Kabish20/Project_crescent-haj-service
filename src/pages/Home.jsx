@@ -16,14 +16,25 @@ function CustomerReviews() {
           <span className="eyebrow">Customer reviews</span>
           <h2>Trusted by pilgrims<br /><em>across every journey.</em></h2>
         </div>
-        <a
-          className="review-google-link"
-          href={CONTACT_INFO.googleReviewsUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
-          View all Google reviews <ArrowIcon />
-        </a>
+        <div className="flex flex-wrap items-center gap-4">
+          <a
+            className="testimonial-youtube-link"
+            href={CONTACT_INFO.youtubeUrl}
+            target="_blank"
+            rel="noreferrer"
+            style={{ margin: 0 }}
+          >
+            Watch on YouTube <ArrowIcon />
+          </a>
+          <a
+            className="review-google-link"
+            href={CONTACT_INFO.googleReviewsUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            View Google reviews <ArrowIcon />
+          </a>
+        </div>
       </div>
       <div className="customer-review-window">
         <div className="customer-review-track">
@@ -184,110 +195,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="testimonial-section">
-        <span className="eyebrow-light">Customer reviews</span>
-        <div className="testimonial-review-grid">
-          <article className="testimonial-review-card">
-            <div className="quote-mark">"</div>
-            <blockquote>
-              Assalamualaikum w.r.w.b. I strongly recommend Crescent Umrah and Hajj Service for a pleasant pilgrimage. I liked the way they organized things for our Umrah trip, including cabs for Ziyarat, hotel-to-airport transfers, food, and a moulavi for guiding you while performing Umrah and Ziyarat. It is outstanding. Alhamdulillah, this is our second year with them and, InshaAllah, many more years to go. I have also recommended their services to extended family and friends. In short, a good, reliable, and trustworthy service. They also provide customised plans on request.
-            </blockquote>
-            <p>— A Crescent pilgrim family</p>
-            <div className="rating">★★★★★ <span>Verified customer experience</span></div>
-          </article>
-          <article className="testimonial-review-card">
-            <div className="quote-mark">“</div>
-            <blockquote>
-              Crescent Umrah &amp; Hajj Services is one of the most trustworthy Umrah service providers. Alhamdulillah, this was our second time choosing them, and when we planned our Umrah again, we didn’t have to think twice before booking with them.<br /><br />
-              Just as we expected, their service was exceptional. They took care of every personal arrangement, making our journey smooth and stress-free from start to finish. Their cab services were reliable, and their visa processing was incredibly efficient—they shared our visa and a detailed day-wise itinerary within just two days.<br /><br />
-              We have already recommended Crescent Umrah &amp; Hajj Services to our extended family and friends, and we will continue to do so.<br /><br />
-              I highly recommend them to anyone looking for a hassle-free and well-organized Umrah experience. May Allah reward the entire team for their excellent service. Ameen.
-            </blockquote>
-            <p className="reviewer-name">— Sabiha Sultana</p>
-            <a className="review-source-link" href="https://www.google.com/maps/contrib/111608337610501191994/reviews?hl=en-IN" target="_blank" rel="noreferrer">
-              View this review on Google Maps <ArrowIcon />
-            </a>
-          </article>
-        </div>
-        <a className="testimonial-youtube-link" href={CONTACT_INFO.youtubeUrl} target="_blank" rel="noreferrer">
-          Watch real pilgrim testimonials on YouTube <ArrowIcon />
-        </a>
-      </section>
-
-      <section className="testimonial-section additional-review-section">
-        <span className="eyebrow-light">Customer review</span>
-        <div className="testimonial-review-grid">
-          <article className="testimonial-review-card">
-            <div className="quote-mark">“</div>
-            <blockquote>
-              Crescent Haj Service organised our Umrah journey with care and professionalism in both Madinah and Makkah. Our travel period was from 29 December 2025 to 10 January 2026, which coincided with peak season. Despite the heavy crowds in both cities, the arrangements were well coordinated and smoothly managed.<br /><br />
-              During this journey, we were able to perform three Umrahs, all of which were well facilitated and organised, allowing us to focus fully on our ibadah without unnecessary stress.<br /><br />
-              We would like to specially acknowledge Mr Ryaz, who coordinated with us throughout the planning stage, including flight bookings, hotel arrangements, and overall logistics. His responsiveness, clarity, and efficiency ensured a smooth and stress-free preparation for the journey.<br /><br />
-              Ziyarah was arranged in both Madinah and Makkah, and in each city the Hajrath who accompanied us was highly knowledgeable. The explanations provided were clear and insightful, adding depth and meaning to the spiritual experience.<br /><br />
-              We would also like to commend Mr Mubarak, the proprietor of Crescent Haj Service, who travelled with us throughout the journey. Despite his position, he remained consistently polite, humble, and approachable. He took personal interest in each and every traveller, maintaining a genuine connection with everyone in the group. His gentle temperament, patience, and calm presence made the journey comfortable and reassuring for all of us.<br /><br />
-              Our stay in Makkah was at DoubleTree by Hilton, which was very comfortable. The hotel’s close proximity to the Haram, within a five minute walk, along with the 24 hour buggy service, was especially convenient.<br /><br />
-              One area for improvement would be room allocation in Madinah, as the rooms were somewhat compact. However, this is a common limitation with many mid-range hotels in Madinah, particularly during peak periods.<br /><br />
-              Overall, Crescent Haj Service delivered a well organised and meaningful Umrah experience. We appreciate the dedication of the team and would confidently recommend Crescent Haj Service to others planning their Umrah journey.
-            </blockquote>
-            <p className="reviewer-name">— Munaawara Banu</p>
-            <a className="review-source-link" href="https://www.google.com/maps/contrib/100035426218546749755/reviews?hl=en-IN" target="_blank" rel="noreferrer">
-              View this review on Google Maps <ArrowIcon />
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section className="testimonial-section additional-review-section">
-        <span className="eyebrow-light">Customer review</span>
-        <div className="testimonial-review-grid">
-          <article className="testimonial-review-card">
-            <div className="quote-mark">“</div>
-            <blockquote>
-              Alhamdulillah. In the name of Allah, my family and I are very, very happy with all the services provided by the Crescent team. Right from our departure to Makkah and our return, they stayed in constant contact with me to make sure everything was okay. Their response time was very quick whenever I needed clarification.<br /><br />
-              Alhamdulillah, my mind was fully focused on Umrah. I am very thankful to the team, who took care of us like family. The package was five-star, the food was delivered on time, and the vehicle arrangements were excellent. The GMC ride was outstanding. I will recommend Crescent to all my family members for their Umrah and Hajj, and will always plan only through the Crescent team.
-            </blockquote>
-            <p className="reviewer-name">— Ansari NM</p>
-            <a className="review-source-link" href="https://www.google.com/maps/contrib/117744735499775852231/reviews?hl=en-IN" target="_blank" rel="noreferrer">
-              View this review on Google Maps <ArrowIcon />
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section className="testimonial-section additional-review-section">
-        <span className="eyebrow-light">Customer review</span>
-        <div className="testimonial-review-grid">
-          <article className="testimonial-review-card">
-            <div className="quote-mark">“</div>
-            <blockquote>
-              I had an excellent experience with Crescent Haj Service. Their Umrah service was truly outstanding, very well organized, and professionally managed. The entire team was highly supportive and ensured that all our requirements were fulfilled perfectly without any delay. From start to finish, everything was smooth and hassle-free. I sincerely appreciate their dedication and commitment, and I strongly recommend Crescent Haj Service to anyone looking for a reliable and trustworthy Umrah service.<br /><br />
-              Once again, thanks for your guidance, Haji Mubarak brother, for the wonderful service.
-            </blockquote>
-            <p className="reviewer-name">— Hassan Mohamed</p>
-            <a className="review-source-link" href="https://www.google.com/maps/contrib/112527273426118218623/reviews?hl=en-IN" target="_blank" rel="noreferrer">
-              View this review on Google Maps <ArrowIcon />
-            </a>
-          </article>
-        </div>
-      </section>
-
-      <section className="testimonial-section additional-review-section">
-        <span className="eyebrow-light">Customer review</span>
-        <div className="testimonial-review-grid">
-          <article className="testimonial-review-card">
-            <div className="quote-mark">“</div>
-            <blockquote>
-              Assalamualaikum w.r.w.b. I strongly recommend Crescent Umrah and Hajj Service for a pleasant pilgrimage. I liked the way they organized things for our Umrah trip, including cabs for Ziyarat, hotel-to-airport transfers, food, and a moulavi for guiding you while performing Umrah and Ziyarat. It is outstanding. Alhamdulillah, this is our second year with them and, InshaAllah, many more years to go. I have also recommended their services to extended family and friends. In short, a good, reliable, and trustworthy service. They also provide customised plans on request.
-            </blockquote>
-            <p className="reviewer-name">— Farhath Aamir</p>
-            <a className="review-source-link" href="https://www.google.com/maps/contrib/103967541975629886972/reviews?hl=en-IN" target="_blank" rel="noreferrer">
-              View this review on Google Maps <ArrowIcon />
-            </a>
-          </article>
-        </div>
-      </section>
-
+      {/* Customer Reviews Showcase */}
       <CustomerReviews />
 
       {/* Final CTA */}

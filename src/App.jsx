@@ -11,7 +11,10 @@ import {
   ZiyaratTours,
   NikkahMasjids,
   Contact,
-  Visa
+  Visa,
+  PrivacyPolicy,
+  TermsConditions,
+  CancellationPolicy
 } from '@/pages'
 
 export default function App() {
@@ -31,6 +34,9 @@ export default function App() {
           <Route path="/nikkah-masjids" element={<NikkahMasjids />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/visa" element={<Visa />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/cancellation-policy" element={<CancellationPolicy />} />
         </Routes>
       </Layout>
     </Router>
