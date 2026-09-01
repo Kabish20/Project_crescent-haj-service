@@ -165,7 +165,7 @@ export default function Footer() {
                   <p key={office.label} className={idx > 0 ? 'mt-3' : ''}>
                     <strong style={{ color: 'rgba(250,248,243,0.8)' }}>{office.city}, {office.country}</strong>
                     <br />
-                    {office.label.replace(' Office', '').replace(' Operations', '')}
+                    {office.label}
                     <br />
                     {office.value}
                   </p>
