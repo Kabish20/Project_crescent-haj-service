@@ -4,7 +4,6 @@ import { useScrollReveal } from '@/hooks'
 import { CONTACT_INFO } from '@/constants'
 import {
   ABOUT_VALUES,
-  ABOUT_MILESTONES,
   ABOUT_STATS
 } from '@/data'
 
@@ -137,57 +136,16 @@ export default function About() {
         </div>
       </section>
 
-      {/* Journey / Milestones */}
-      <section className="py-20" style={{ background: 'var(--dark-bg)' }}>
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-14 reveal">
-            <span
-              className="inline-block text-xs font-body font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4"
-              style={{ background: 'rgba(201,168,76,0.1)', color: 'var(--gold)', border: '1px solid rgba(201,168,76,0.25)' }}
-            >
-              Our Journey
-            </span>
-            <h2 className="font-heading text-4xl font-bold" style={{ color: 'var(--pearl)' }}>15 Years of Sacred Service</h2>
-          </div>
-          <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-8 top-0 bottom-0 w-px hidden md:block" style={{ background: 'rgba(201,168,76,0.2)' }} />
-            <div className="space-y-6">
-              {ABOUT_MILESTONES.map((m, i) => (
-                <div key={m.year} className="reveal md:pl-20 relative" style={{ transitionDelay: `${i * 0.08}s` }}>
-                  {/* Dot */}
-                  <div
-                    className="hidden md:flex absolute left-5 top-4 w-6 h-6 rounded-full items-center justify-center"
-                    style={{ background: 'var(--gold)', boxShadow: '0 0 0 4px rgba(201,168,76,0.15)' }}
-                  >
-                    <div className="w-2 h-2 rounded-full bg-white" />
-                  </div>
-                  <div className="glass-card p-6 rounded-2xl">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="font-body text-xs font-bold uppercase tracking-widest px-3 py-1 rounded" style={{ background: 'rgba(201,168,76,0.15)', color: 'var(--gold)' }}>
-                        {m.year}
-                      </span>
-                      <h3 className="font-heading text-xl font-bold" style={{ color: 'var(--pearl)' }}>{m.title}</h3>
-                    </div>
-                    <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(250,248,243,0.55)' }}>{m.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Numbers */}
       <section className="py-20" style={{ background: 'linear-gradient(135deg, var(--emerald), #0e5c46)' }}>
         <div className="max-w-5xl mx-auto px-6 text-center reveal">
           <h2 className="font-heading text-4xl font-bold mb-12" style={{ color: 'var(--pearl)' }}>Our Service, by the Numbers</h2>
           <div className="stagger-wrap grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { num: '15+', label: 'Years Experience', sub: 'Since 2009', count: '15' },
-              { num: '1000+', label: 'Happy Pilgrims', sub: 'Across India & UAE', count: '1000' },
-              { num: '50+', label: 'Group Departures', sub: 'For Hajj & Umrah', count: '50' },
-              { num: '100%', label: 'Visa Success Rate', sub: 'Never denied a visa', count: '100' },
+              { num: '15+', label: 'Years Experience', sub: 'Since 2009', count: '15+' },
+              { num: '1000+', label: 'Happy Pilgrims', sub: 'Across India & UAE', count: '1000+' },
+              { num: '50+', label: 'Group Departures', sub: 'For Hajj & Umrah', count: '50+' },
+              { num: '100%', label: 'Visa Success Rate', sub: 'Never denied a visa', count: '100%' },
             ].map((stat, i) => (
               <div key={stat.label} className="stagger-child" style={{ transitionDelay: `${i * 0.1}s` }}>
                 <div className="font-heading text-5xl md:text-6xl font-bold mb-2 count-up" data-count={stat.count} style={{ color: 'var(--gold)' }}>

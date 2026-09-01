@@ -11,7 +11,7 @@ export const CONTACT_INFO = {
   offices: [
     {
       icon: '📍',
-      label: 'Trichy Head Office',
+      label: 'Head Office',
       value: '5, Crescent Park Apartment, Hazrath Sulaiman Street, Kaja Nagar, Trichy – 620020',
       city: 'Trichy',
       state: 'Tamil Nadu',
@@ -20,7 +20,7 @@ export const CONTACT_INFO = {
     },
     {
       icon: '📍',
-      label: 'Mahabubnagar Regional Office',
+      label: 'Regional Office',
       value: '#5-3-21/5/3, Plot No: 2, Behind Ali\'s Mart, Z&Z Colony, Raichur Road, Mahabubnagar – 509 001, Telangana',
       city: 'Mahabubnagar',
       state: 'Telangana',
@@ -29,7 +29,7 @@ export const CONTACT_INFO = {
     },
     {
       icon: '🇸🇦',
-      label: 'Jeddah Saudi Operations',
+      label: 'Operational Office',
       value: '8807, Prince Majid Street, 2104, Al Aziziyah Dist., 23342, Jeddah, Kingdom of Saudi Arabia',
       city: 'Jeddah',
       state: 'Makkah Province',
