@@ -5,7 +5,7 @@ export const CONTACT_INFO = {
   email: 'crescenthajservice@gmail.com',
   emailMailto: 'mailto:crescenthajservice@gmail.com',
   whatsappUrl: 'https://wa.me/918110082222?text=Assalamu%20Alaikum%2C%20I%20would%20like%20help%20choosing%20a%20Hajj%20or%20Umrah%20package.',
-  youtubeUrl: 'https://youtube.com/@CRESCENTHAJSERVICE/videos',
+  youtubeUrl: 'https://www.youtube.com/@CRESCENTHAJSERVICE/shorts',
   googleReviewsUrl: 'https://www.google.com/maps/place/Crescent+Haj+Service/reviews',
   leadZohoFormUrl: 'https://forms.zohopublic.in/GoimomiHolidays/form/WebsiteLead/formperma/EE3MFyvZhURPIlQK32BZ5cwdxx6DvziEjg70HxXJg5k?zf_rszfm=1',
   offices: [

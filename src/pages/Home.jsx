@@ -32,7 +32,7 @@ function CustomerReviews() {
             target="_blank"
             rel="noreferrer"
           >
-            View Google reviews <ArrowIcon />
+            View all Google reviews <ArrowIcon />
           </a>
         </div>
       </div>
@@ -195,7 +195,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Customer Reviews Showcase */}
       <CustomerReviews />
 
       {/* Final CTA */}

@@ -4,6 +4,7 @@ export const NAV_LINKS = [
     label: 'Packages',
     dropdown: [
       { label: 'Umrah Packages', path: '/umrah-packages' },
+      { label: 'Hajj Packages', path: '/hajj-packages' },
       { label: 'Customized Umrah & Hajj', path: '/customizedumrah' },
     ]
   },
@@ -17,13 +18,15 @@ export const NAV_LINKS = [
 export const FOOTER_LINKS = {
   'Packages': [
     { label: 'Umrah Packages', path: '/umrah-packages' },
+    { label: 'Hajj Packages', path: '/hajj-packages' },
     { label: 'Customized Umrah & Hajj', path: '/customizedumrah' },
     { label: 'Ziyarat Tours', path: '/ziyarat-tours' },
   ],
   'Services': [
+    { label: 'Saudi Visa Services', path: '/visa' },
     { label: 'Nikkah in Holy Masjids', path: '/nikkah-masjids' },
     { label: 'About Us', path: '/about' },
-    { label: 'Contact', path: '/contact' },
+    { label: 'Contact Us', path: '/contact' },
     { label: 'Privacy Policy', path: '/privacy-policy' },
     { label: 'Terms & Conditions', path: '/terms-conditions' },
     { label: 'Cancellation Policy', path: '/cancellation-policy' },

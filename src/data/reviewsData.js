@@ -45,6 +45,6 @@ export const CUSTOMER_REVIEWS = [
     ago: 'Customer review',
     service: 'Pilgrimage Service',
     text: 'We felt completely cared for at every step. The scholar guidance transformed our Umrah from a trip into a spiritual awakening. Words cannot express our gratitude.',
-    link: 'https://www.youtube.com/@CRESCENTHAJSERVICE/videos'
+    link: 'https://www.youtube.com/@CRESCENTHAJSERVICE/shorts'
   },
 ]
