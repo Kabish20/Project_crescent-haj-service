@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { ArrowIcon, GeneralEnquiryModal } from '@/components/common'
+import { ArrowIcon } from '@/components/common'
+import CinematicHero from '@/components/effects/CinematicHero'
 import { CONTACT_INFO } from '@/constants'
 import {
   HOME_JOURNEYS,
@@ -81,36 +82,10 @@ export default function Home() {
   return (
     <main className="home-refresh">
       {/* Hero */}
-      <section className="refresh-hero">
-        <img src="/hero-makkah-generated.png" alt="Masjid al-Haram in Makkah at dusk" />
-        <div className="refresh-hero-shade" />
-        <div className="refresh-hero-content">
-          <p className="eyebrow-light">Crescent Haj Service · Trusted Since 2009 · 1000+ Happy Pilgrims</p>
-          <h1>Answer your heart's<br /><em>deepest calling.</em></h1>
-          <p className="hero-lede">
-            Premium Hajj and Umrah packages combining spiritual guidance, luxury accommodations, and unwavering support.
-            Make your pilgrimage a transformative journey, not a travel checklist.
-          </p>
-          <div className="refresh-actions">
-            <Link className="refresh-button refresh-button-gold" to="/umrah-packages">
-              Start your journey <ArrowIcon />
-            </Link>
-            <a className="refresh-button refresh-button-outline" href={whatsapp} target="_blank" rel="noreferrer">
-              Free consultation
-            </a>
-          </div>
-          <div className="hero-note">
-            <span className="live-dot" /> 24/7 WhatsApp support · India & UAE departures · Scholar-led groups
-          </div>
-        </div>
-        <div className="hero-scroll">
-          Scroll to explore <span />
-        </div>
-        <GeneralEnquiryModal defaultOpen={true} />
-      </section>
+      <CinematicHero />
 
       {/* Journeys */}
-      <section className="journey-section section-pad">
+      <section id="pilgrimage-journeys" className="journey-section section-pad">
         <div className="section-heading-row">
           <div>
             <span className="eyebrow">Discover your pilgrimage</span>

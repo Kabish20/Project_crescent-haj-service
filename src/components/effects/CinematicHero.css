@@ -1,0 +1,118 @@
+/* The photography stays the focus; movement is deliberately slow and quiet. */
+.cinematic-hero { min-height: max(800px, 100svh); }
+.cinematic-hero .hero-cinematic-stage { pointer-events: none; }
+.cinematic-scene { position: absolute; inset: 0; opacity: 0; transition: opacity 1.8s ease-in-out; }
+.cinematic-scene.is-active { opacity: 1; }
+.cinematic-camera { position: absolute; inset: -2%; transform: scale(1.025); animation: cinematicCamera 17s ease-in-out infinite alternate; animation-play-state: paused; }
+.cinematic-scene.is-active .cinematic-camera { animation-play-state: running; }
+.cinematic-scene[data-scene="kaaba"] .cinematic-camera { left: 24%; }
+.cinematic-scene[data-scene="madinah"] .cinematic-camera { left: 20%; }
+.cinematic-scene[data-scene="kaaba"] .cinematic-camera,
+.cinematic-scene[data-scene="madinah"] .cinematic-camera { -webkit-mask-image: linear-gradient(90deg, transparent, #000 24%); mask-image: linear-gradient(90deg, transparent, #000 24%); }
+.cinematic-camera picture, .cinematic-camera img { display: block; width: 100%; height: 100%; }
+.cinematic-camera img { max-width: none; object-fit: cover; object-position: center; }
+.cinematic-scene[data-scene="makkah"] img { object-position: 68% center; }
+.cinematic-scene[data-scene="kaaba"] img { object-position: center 58%; }
+.cinematic-hero .refresh-hero-shade { background: linear-gradient(90deg, #031615 0%, rgba(3,22,21,.92) 22%, rgba(3,22,21,.72) 39%, rgba(3,22,21,.18) 64%, rgba(3,22,21,.03) 100%), linear-gradient(180deg, rgba(3,22,21,.25), transparent 23%, transparent 60%, rgba(3,22,21,.92)); }
+.cinematic-hero .hero-cinematic-vignette { box-shadow: inset 0 0 120px 12px rgba(0,9,8,.28); }
+.cinematic-dawn-light { position: absolute; inset: 0; background: radial-gradient(ellipse at 84% 28%, rgba(246,207,128,.2), transparent 48%); mix-blend-mode: screen; animation: cinematicLight 12s ease-in-out infinite alternate; }
+.cinematic-hero .hero-film-grain { inset: 0; opacity: .025; animation: none; }
+.cinematic-hero .hero-light-rays { opacity: .13; }
+.cinematic-hero .refresh-hero-content { padding-top: 155px; padding-bottom: 185px; }
+.cinematic-hero h1 { max-width: 750px; font-size: clamp(68px, 6.7vw, 96px); line-height: .98; }
+.cinematic-hero .hero-lede { max-width: 580px; color: rgba(255,255,255,.78); }
+.cinematic-hero .hero-note { max-width: 500px; line-height: 1.7; margin-top: 24px; color: rgba(255,255,255,.6); }
+.cinematic-hero .refresh-button { min-height: 52px; padding-inline: 23px; border-radius: 4px; }
+.cinematic-hero .refresh-button-outline { background: rgba(3,22,21,.32); backdrop-filter: blur(8px); }
+.cinematic-advisor { margin-top: 18px; animation: heroRevealUp .9s .82s both; }
+.cinematic-advisor button { display: inline-flex; align-items: center; gap: 8px; min-height: 36px; padding: 0; border: 0; background: transparent; color: #e2d9be; font: 500 11px/1.5 'Manrope', sans-serif; cursor: pointer; }
+.cinematic-advisor button:hover { color: #f5df9a; }
+.cinematic-advisor svg { width: 14px; height: 14px; }
+.cinematic-footer { position: absolute; z-index: 3; left: 50%; bottom: 34px; width: min(var(--content-width), calc(100% - (var(--content-gutter) * 2))); transform: translateX(-50%); display: flex; justify-content: space-between; align-items: center; gap: 32px; padding-top: 23px; border-top: 1px solid rgba(226,201,121,.22); }
+.cinematic-playback { display: flex; align-items: center; gap: 22px; }
+.cinematic-pause { flex-shrink: 0; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(226,201,121,.4); background: rgba(3,22,21,.32); color: #ead59b; cursor: pointer; transition: background .25s, border-color .25s; }
+.cinematic-pause:hover { background: rgba(226,201,121,.14); border-color: #ead59b; }
+.cinematic-pause:disabled { cursor: default; opacity: .5; }
+.cinematic-pause svg { width: 19px; height: 19px; }
+.cinematic-chapters { display: flex; gap: 24px; }
+.cinematic-chapter { position: relative; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px; min-height: 48px; padding: 5px 0 13px; border: 0; color: rgba(255,255,255,.55); background: transparent; text-align: left; cursor: pointer; transition: color .3s; }
+.cinematic-chapter:hover, .cinematic-chapter.is-active { color: #f5df9a; }
+.cinematic-chapter:disabled { opacity: .45; cursor: default; }
+.cinematic-chapter-number { font: 500 11px/1 'Manrope', sans-serif; }
+.cinematic-chapter-label { font: 500 10px/1.4 'Manrope', sans-serif; letter-spacing: .025em; }
+.cinematic-chapter-track { position: absolute; height: 1px; left: 0; right: 0; bottom: 4px; background: rgba(226,201,121,.24); overflow: hidden; }
+.cinematic-chapter-progress { display: block; width: 100%; height: 100%; transform-origin: left; background: #e4c979; animation: cinematicProgress 8.5s linear forwards; }
+.cinematic-location { display: flex; align-items: center; gap: 12px; animation: cinematicCaption 1.3s ease both; }
+.cinematic-location > svg { flex-shrink: 0; width: 21px; height: 21px; fill: none; stroke: #d8bd75; stroke-width: 1.25; }
+.cinematic-location strong { display: block; color: #f4ecda; text-transform: uppercase; font: 600 10px/1.5 'Manrope', sans-serif; letter-spacing: .14em; }
+.cinematic-location small { display: block; margin-top: 5px; color: rgba(255,255,255,.56); font: 400 10px/1.5 'Manrope', sans-serif; }
+.cinematic-hero .hero-scroll { right: -18px; text-decoration: none; font-size: 8px; color: rgba(255,255,255,.7); }
+.cinematic-hero[data-motion="paused"] .hero-cinematic-stage *,
+.cinematic-hero[data-motion="paused"] h1 em,
+.cinematic-hero[data-motion="paused"] .live-dot,
+.cinematic-hero[data-motion="paused"] .cinematic-chapter-progress,
+.cinematic-hero[data-motion="paused"] .hero-scroll span::after { animation-play-state: paused !important; }
+.cinematic-hero[data-motion="paused"] .hero-cinematic-stage { transition: none; }
+
+@keyframes cinematicCamera { from { transform: scale(1.025) translate3d(0, .4%, 0); } to { transform: scale(1.12) translate3d(-1.2%, -.7%, 0); } }
+@keyframes cinematicLight { from { opacity: .35; transform: translate3d(-1%, 0, 0); } to { opacity: .9; transform: translate3d(1%, -1%, 0); } }
+@keyframes cinematicProgress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes cinematicCaption { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .cinematic-hero h1 { max-width: 630px; font-size: 76px; }
+  .cinematic-chapters { gap: 16px; }
+  .cinematic-chapter-label { font-size: 9px; }
+  .cinematic-location small { max-width: 200px; }
+}
+
+@media (max-width: 900px) {
+  .cinematic-hero { min-height: max(900px, 100svh); display: block; }
+  .cinematic-hero .hero-cinematic-stage { bottom: auto; height: 560px; }
+  .cinematic-scene[data-scene] .cinematic-camera { left: -2%; -webkit-mask-image: none; mask-image: none; }
+  .cinematic-scene[data-scene="makkah"] img { object-position: 74% center; }
+  .cinematic-scene[data-scene="kaaba"] img { object-position: center 62%; }
+  .cinematic-scene[data-scene="madinah"] img { object-position: center 48%; }
+  .cinematic-hero .refresh-hero-shade { background: linear-gradient(180deg, rgba(3,22,21,.3) 0, rgba(3,22,21,.03) 200px, rgba(3,22,21,.12) 330px, rgba(3,22,21,.83) 465px, #031615 555px); }
+  .cinematic-hero .refresh-hero-content { padding-top: 410px; padding-bottom: 175px; text-align: center; }
+  .cinematic-hero h1 { max-width: 650px; font-size: clamp(52px, 8vw, 76px); }
+  .cinematic-hero .hero-kicker { margin-bottom: 18px; background: rgba(3,22,21,.7); }
+  .cinematic-hero .eyebrow-light { margin-bottom: 20px; }
+  .cinematic-hero .hero-lede { max-width: 580px; }
+  .cinematic-hero .hero-note { margin-inline: auto; }
+  .cinematic-footer { bottom: 30px; flex-direction: column; gap: 19px; padding-top: 20px; }
+  .cinematic-playback { gap: 20px; }
+  .cinematic-chapters { gap: 26px; }
+  .cinematic-location { text-align: center; gap: 8px; }
+  .cinematic-location > svg { width: 16px; height: 16px; }
+  .cinematic-location strong { font-size: 9px; }
+  .cinematic-location small { margin-top: 3px; font-size: 9px; }
+  .cinematic-hero .hero-scroll { display: none; }
+  .cinematic-hero .hero-light-rays { display: none; }
+  .cinematic-hero .hero-film-grain { display: none; }
+  .cinematic-hero .hero-particles i:nth-child(n + 7) { display: none; }
+  .cinematic-advisor button { min-height: 44px; }
+}
+
+@media (max-width: 640px) {
+  .cinematic-hero .hero-cinematic-stage { height: 460px; }
+  .cinematic-hero .refresh-hero-shade { background: linear-gradient(180deg, rgba(3,22,21,.27), rgba(3,22,21,.02) 180px, rgba(3,22,21,.08) 265px, rgba(3,22,21,.9) 405px, #031615 465px); }
+  .cinematic-hero .refresh-hero-content { padding-top: 345px; padding-bottom: 174px; }
+  .cinematic-hero h1 { font-size: clamp(42px, 11.8vw, 68px); margin-bottom: 22px; }
+  .cinematic-hero .eyebrow-light { max-width: none; font-size: 8px; letter-spacing: .13em; margin-bottom: 17px; }
+  .cinematic-hero .hero-lede { font-size: 13px; line-height: 1.8; }
+  .cinematic-hero .hero-note { max-width: 300px; margin-top: 14px; font-size: 9px; }
+  .cinematic-hero .refresh-button { padding-inline: 17px; min-height: 48px; font-size: 9px; }
+  .cinematic-advisor { margin-top: 10px; }
+  .cinematic-footer { gap: 17px; }
+  .cinematic-playback { width: 100%; gap: 14px; }
+  .cinematic-chapters { flex: 1; gap: 14px; justify-content: space-between; }
+  .cinematic-chapter { min-width: 0; flex: 1; grid-template-columns: 1fr; gap: 6px; }
+  .cinematic-chapter-label { font-size: 8px; white-space: nowrap; letter-spacing: 0; }
+  .cinematic-pause { width: 44px; height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-hero *, .cinematic-hero *::after { animation: none !important; transition: none !important; }
+  .cinematic-hero .cinematic-chapter-progress { transform: scaleX(1); }
+}
