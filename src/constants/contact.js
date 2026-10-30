@@ -2,6 +2,7 @@ export const CONTACT_INFO = {
   phone: '+91 8110082222',
   phoneDisplay: '+91 8110082222',
   phoneTel: 'tel:+918110082222',
+  phoneRaw: '918110082222',
   email: 'crescenthajservice@gmail.com',
   emailMailto: 'mailto:crescenthajservice@gmail.com',
   whatsappUrl: 'https://wa.me/918110082222?text=Assalamu%20Alaikum%2C%20I%20would%20like%20help%20choosing%20a%20Hajj%20or%20Umrah%20package.',
@@ -38,4 +39,14 @@ export const CONTACT_INFO = {
     }
   ],
   workingHours: 'Mon–Sat: 9am – 7pm'
+}
+
+/**
+ * Safely generate sanitized, encoded WhatsApp message URLs
+ * @param {string} message - Message payload to encode
+ * @returns {string} Sanitized WhatsApp link
+ */
+export function createWhatsAppUrl(message = '') {
+  const clean = String(message || '').trim()
+  return `https://wa.me/${CONTACT_INFO.phoneRaw}${clean ? `?text=${encodeURIComponent(clean)}` : ''}`
 }

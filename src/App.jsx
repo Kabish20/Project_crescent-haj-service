@@ -12,6 +12,7 @@ import {
   NikkahMasjids,
   Contact,
   Visa,
+  NotFound,
   PrivacyPolicy,
   TermsConditions,
   CancellationPolicy
@@ -37,6 +38,7 @@ export default function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </Router>

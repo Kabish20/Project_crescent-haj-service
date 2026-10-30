@@ -1,0 +1,12 @@
+# Robots.txt for Crescent Haj Service
+User-agent: *
+Allow: /
+
+# Disallow scanning internal or sensitive paths
+Disallow: /dist/
+Disallow: /node_modules/
+Disallow: /*.json$
+
+# Sitemaps and Security
+Sitemap: https://crescenthaj.com/sitemap.xml
+

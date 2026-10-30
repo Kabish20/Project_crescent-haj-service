@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { SectionHeader } from '@/components/common'
 import { useScrollReveal } from '@/hooks'
-import { CONTACT_INFO } from '@/constants'
+import { CONTACT_INFO, createWhatsAppUrl } from '@/constants'
 import {
   UMRAH_UAE_TRAVEL_OPTIONS,
   UMRAH_UAE_FEATURES,
@@ -32,7 +32,7 @@ export default function UmrahUAE() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
-              href="https://wa.me/918110082222?text=I%20want%20details%20about%20Umrah%20from%20UAE"
+              href={createWhatsAppUrl('I want details about Umrah from UAE')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold px-8 py-3.5 rounded-full font-body font-bold text-sm"
@@ -104,7 +104,7 @@ export default function UmrahUAE() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/918110082222?text=I%20want%20details%20on%20Umrah%20from%20UAE"
+                  href={createWhatsAppUrl('I want details on Umrah from UAE')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 btn-emerald w-full py-3 rounded-full font-body font-bold text-sm text-center block"
@@ -167,7 +167,7 @@ export default function UmrahUAE() {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/918110082222?text=I%20want%20details%20on%20the%20Weekend%20Executive%20Umrah%20from%20UAE"
+                  href={createWhatsAppUrl('I want details on the Weekend Executive Umrah from UAE')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm inline-block"
@@ -258,7 +258,7 @@ export default function UmrahUAE() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://wa.me/918110082222?text=I%20want%20to%20book%20Umrah%20from%20UAE"
+              href={createWhatsAppUrl('I want to book Umrah from UAE')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm"

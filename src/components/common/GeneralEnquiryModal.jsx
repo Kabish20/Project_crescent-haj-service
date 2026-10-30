@@ -67,6 +67,9 @@ export default function GeneralEnquiryModal({ defaultOpen = true, onClose }) {
           ref={frameRef}
           title="General enquiry form"
           src={CONTACT_INFO.leadZohoFormUrl}
+          loading="lazy"
+          sandbox="allow-scripts allow-forms allow-same-origin allow-popups"
+          referrerPolicy="strict-origin-when-cross-origin"
         />
         <span className="sr-only" tabIndex={0} onFocus={() => closeRef.current?.focus()} />
       </div>

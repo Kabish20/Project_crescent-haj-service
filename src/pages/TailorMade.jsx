@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { SectionHeader, GoldDivider } from '@/components/common'
 import { useScrollReveal } from '@/hooks'
-import { CONTACT_INFO } from '@/constants'
+import { CONTACT_INFO, createWhatsAppUrl } from '@/constants'
 import { TAILOR_MADE_BENEFITS, HOTEL_OPTIONS } from '@/data'
 
 export default function TailorMade() {
@@ -17,9 +17,25 @@ export default function TailorMade() {
     notes: ''
   })
 
-  const handleChange = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }))
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    const sanitized = value.slice(0, name === 'notes' ? 1000 : 80)
+    setForm((p) => ({ ...p, [name]: sanitized }))
+  }
 
-  const whatsappMsg = `Hi, I want a Customized Umrah Package.\n\nName: ${form.name}\nFrom: ${form.from}\nPilgrims: ${form.pilgrims}\nMonth: ${form.month}\nHotel: ${form.hotel}\nBudget: ${form.budget}\nNotes: ${form.notes}`
+  const whatsappMsg = [
+    'Hi, I want a Customized Umrah Package.',
+    form.name ? `Name: ${form.name.trim()}` : null,
+    form.phone ? `Phone: ${form.phone.trim()}` : null,
+    form.from ? `From: ${form.from.trim()}` : null,
+    form.pilgrims ? `Pilgrims: ${form.pilgrims.trim()}` : null,
+    form.month ? `Month: ${form.month.trim()}` : null,
+    form.hotel ? `Hotel: ${form.hotel.trim()}` : null,
+    form.budget ? `Budget: ${form.budget.trim()}` : null,
+    form.notes ? `Notes: ${form.notes.trim()}` : null,
+  ].filter(Boolean).join('\n')
+
+  const whatsappHref = createWhatsAppUrl(whatsappMsg)
 
   return (
     <div>
@@ -120,12 +136,12 @@ export default function TailorMade() {
           <div className="glass-card rounded-2xl p-8 md:p-10 reveal">
             <div className="grid sm:grid-cols-2 gap-5">
               {[
-                { name: 'name', placeholder: 'Your Full Name', label: 'Name' },
-                { name: 'phone', placeholder: 'WhatsApp / Phone Number', label: 'WhatsApp / Phone' },
-                { name: 'from', placeholder: 'City, Country', label: 'Travelling From' },
-                { name: 'pilgrims', placeholder: 'e.g. 4 (2 adults, 2 children)', label: 'No. of Pilgrims' },
-                { name: 'month', placeholder: 'e.g. Ramadan 2025', label: 'Preferred Month' },
-                { name: 'budget', placeholder: 'e.g. ₹1.5 Lakh per person', label: 'Approximate Budget' },
+                { name: 'name', placeholder: 'Your Full Name', label: 'Name', maxLength: 80 },
+                { name: 'phone', placeholder: 'WhatsApp / Phone Number', label: 'WhatsApp / Phone', maxLength: 25 },
+                { name: 'from', placeholder: 'City, Country', label: 'Travelling From', maxLength: 80 },
+                { name: 'pilgrims', placeholder: 'e.g. 4 (2 adults, 2 children)', label: 'No. of Pilgrims', maxLength: 30 },
+                { name: 'month', placeholder: 'e.g. Ramadan 2025', label: 'Preferred Month', maxLength: 50 },
+                { name: 'budget', placeholder: 'e.g. ₹1.5 Lakh per person', label: 'Approximate Budget', maxLength: 50 },
               ].map((f) => (
                 <div key={f.name}>
                   <label className="block text-xs font-body font-semibold mb-1.5" style={{ color: 'var(--gold)' }}>{f.label}</label>
@@ -133,6 +149,7 @@ export default function TailorMade() {
                     name={f.name}
                     placeholder={f.placeholder}
                     value={form[f.name]}
+                    maxLength={f.maxLength}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl font-body text-sm focus:outline-none transition-all"
                     style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(201,168,76,0.2)', color: 'var(--pearl)' }}
@@ -162,6 +179,7 @@ export default function TailorMade() {
               <textarea
                 name="notes"
                 rows={4}
+                maxLength={1000}
                 placeholder="Elderly pilgrim, wheelchair access, dietary requirements, private guide, Ramadan nights, specific Ziyarat sites..."
                 value={form.notes}
                 onChange={handleChange}
@@ -171,7 +189,7 @@ export default function TailorMade() {
             </div>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
               <a
-                href={`https://wa.me/918110082222?text=${encodeURIComponent(whatsappMsg)}`}
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold flex-1 py-4 rounded-full font-body font-bold text-sm text-center"

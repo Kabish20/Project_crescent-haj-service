@@ -22,7 +22,7 @@ function CustomerReviews() {
             className="testimonial-youtube-link"
             href={CONTACT_INFO.youtubeUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             style={{ margin: 0 }}
           >
             Watch on YouTube <ArrowIcon />
@@ -31,7 +31,7 @@ function CustomerReviews() {
             className="review-google-link"
             href={CONTACT_INFO.googleReviewsUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             View all Google reviews <ArrowIcon />
           </a>
@@ -49,7 +49,7 @@ function CustomerReviews() {
                     <small>{review.ago}</small>
                   </div>
                 </div>
-                <a className="google-review-badge" href={review.link} target="_blank" rel="noreferrer">
+                <a className="google-review-badge" href={review.link} target="_blank" rel="noopener noreferrer">
                   <span>G</span> REVIEW
                 </a>
               </div>
@@ -181,7 +181,7 @@ export default function Home() {
             Connect with our pilgrimage advisors today. Free consultation, zero pressure. We're here to guide you home to the Haramain.
           </p>
         </div>
-        <a className="refresh-button refresh-button-gold" href={whatsapp} target="_blank" rel="noreferrer">
+        <a className="refresh-button refresh-button-gold" href={whatsapp} target="_blank" rel="noopener noreferrer">
           Start a conversation <ArrowIcon />
         </a>
       </section>
@@ -189,7 +189,7 @@ export default function Home() {
       {/* Mobile Action Bar */}
       <div className="mobile-action-bar">
         <Link to="/umrah-packages">Packages</Link>
-        <a href={whatsapp} target="_blank" rel="noreferrer">WhatsApp</a>
+        <a href={whatsapp} target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a href={CONTACT_INFO.phoneTel}>Call us</a>
       </div>
     </main>

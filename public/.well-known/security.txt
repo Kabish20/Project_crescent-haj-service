@@ -1,0 +1,11 @@
+# Security Policy for Crescent Haj Service
+# RFC 9116 compliant vulnerability disclosure
+
+Contact: mailto:crescenthajservice@gmail.com
+Contact: tel:+918110082222
+Preferred-Languages: en, ta, ur, ar
+Canonical: https://crescenthaj.com/.well-known/security.txt
+Policy: https://crescenthaj.com/privacy-policy
+Acknowledgments: https://crescenthaj.com/about
+Expires: 2027-12-31T23:59:59.000Z
+

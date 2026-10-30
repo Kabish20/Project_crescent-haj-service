@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useScrollReveal } from '@/hooks'
-import { CONTACT_INFO } from '@/constants'
+import { CONTACT_INFO, createWhatsAppUrl } from '@/constants'
 
 export default function Contact() {
   useScrollReveal()
@@ -14,9 +14,25 @@ export default function Contact() {
     message: ''
   })
 
-  const handleChange = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }))
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    // Limit length and sanitize control characters to prevent client-side injection / payload stuffing
+    const sanitized = value.slice(0, name === 'message' ? 1000 : 100)
+    setForm((p) => ({ ...p, [name]: sanitized }))
+  }
 
-  const msg = `Hi, I want to enquire about a pilgrimage package.\nName: ${form.name}\nPhone: ${form.phone}\nTravelling From: ${form.from}\nPassengers: ${form.passengers}\nPreferred Month: ${form.month}\nPackage Type: ${form.packageType}\nMessage: ${form.message}`
+  const msg = [
+    'Hi, I want to enquire about a pilgrimage package.',
+    form.name ? `Name: ${form.name.trim()}` : null,
+    form.phone ? `Phone: ${form.phone.trim()}` : null,
+    form.from ? `Travelling From: ${form.from.trim()}` : null,
+    form.passengers ? `Passengers: ${form.passengers.trim()}` : null,
+    form.month ? `Preferred Month: ${form.month.trim()}` : null,
+    form.packageType ? `Package Type: ${form.packageType.trim()}` : null,
+    form.message ? `Message: ${form.message.trim()}` : null,
+  ].filter(Boolean).join('\n')
+
+  const whatsappHref = createWhatsAppUrl(msg)
 
   const contactList = [
     { icon: '📞', label: 'Phone / WhatsApp', value: CONTACT_INFO.phoneDisplay, href: CONTACT_INFO.phoneTel },
@@ -91,11 +107,11 @@ export default function Contact() {
             <p className="font-body text-sm mb-6" style={{ color: 'rgba(26,26,26,0.6)' }}>Fill this form and we'll call you back with personalized package options</p>
             <div className="grid sm:grid-cols-2 gap-5">
               {[
-                { name: 'name', label: 'Your Name', placeholder: 'Full Name' },
-                { name: 'phone', label: 'WhatsApp / Phone', placeholder: '+91 or +971...' },
-                { name: 'from', label: 'Travelling From', placeholder: 'City, Country' },
-                { name: 'passengers', label: 'No. of Passengers', placeholder: 'e.g. 4' },
-                { name: 'month', label: 'Preferred Month', placeholder: 'e.g. March 2025' },
+                { name: 'name', label: 'Your Name', placeholder: 'Full Name', maxLength: 80 },
+                { name: 'phone', label: 'WhatsApp / Phone', placeholder: '+91 or +971...', maxLength: 25 },
+                { name: 'from', label: 'Travelling From', placeholder: 'City, Country', maxLength: 80 },
+                { name: 'passengers', label: 'No. of Passengers', placeholder: 'e.g. 4', maxLength: 10 },
+                { name: 'month', label: 'Preferred Month', placeholder: 'e.g. March 2025', maxLength: 50 },
               ].map((f) => (
                 <div key={f.name}>
                   <label className="block text-xs font-body font-semibold mb-1.5" style={{ color: 'var(--emerald)' }}>{f.label}</label>
@@ -103,6 +119,7 @@ export default function Contact() {
                     name={f.name}
                     placeholder={f.placeholder}
                     value={form[f.name]}
+                    maxLength={f.maxLength}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl border font-body text-sm focus:outline-none"
                     style={{ border: '1px solid rgba(13,74,58,0.2)', background: 'rgba(13,74,58,0.02)', color: 'var(--charcoal)' }}
@@ -133,6 +150,7 @@ export default function Contact() {
               <textarea
                 name="message"
                 rows={4}
+                maxLength={1000}
                 placeholder="Any specific requirements or questions..."
                 value={form.message}
                 onChange={handleChange}
@@ -142,7 +160,7 @@ export default function Contact() {
             </div>
             <div className="flex flex-wrap gap-4 mt-6">
               <a
-                href={`https://wa.me/918110082222?text=${encodeURIComponent(msg)}`}
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold flex-1 py-3.5 rounded-full font-body font-bold text-sm text-center"

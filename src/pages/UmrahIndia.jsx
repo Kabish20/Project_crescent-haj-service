@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { SectionHeader } from '@/components/common'
 import { useScrollReveal } from '@/hooks'
-import { CONTACT_INFO } from '@/constants'
+import { CONTACT_INFO, createWhatsAppUrl } from '@/constants'
 import {
   UMRAH_INDIA_FEATURES,
   UMRAH_INDIA_INCLUSIONS,
@@ -33,7 +33,7 @@ export default function UmrahIndia() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8">
             <a
-              href="https://wa.me/918110082222?text=I%20want%20details%20about%20Umrah%20from%20India"
+              href={createWhatsAppUrl('I want details about Umrah from India')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold px-8 py-3.5 rounded-full font-body font-bold text-sm"
@@ -132,7 +132,7 @@ export default function UmrahIndia() {
                     <span className="text-xs font-bold px-2 py-1 rounded" style={{ background: 'rgba(201,168,76,0.1)', color: 'var(--gold)' }}>{d.freq}</span>
                     <div className="mt-1">
                       <a
-                        href={`https://wa.me/918110082222?text=Enquiry%20for%20Umrah%20from%20${d.city}`}
+                        href={createWhatsAppUrl(`Enquiry for Umrah from ${d.city}`)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-xs font-bold underline"
@@ -183,7 +183,7 @@ export default function UmrahIndia() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://wa.me/918110082222?text=I%20want%20details%20about%20Umrah%20packages%20from%20India"
+              href={createWhatsAppUrl('I want details about Umrah packages from India')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold px-8 py-4 rounded-full font-body font-bold text-sm"

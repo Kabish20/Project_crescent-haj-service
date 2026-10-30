@@ -41,7 +41,7 @@ export default function Visa() {
               className="refresh-button refresh-button-gold"
               href={visaWhatsappUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               Enquire on WhatsApp <ArrowIcon />
             </a>
@@ -142,7 +142,7 @@ export default function Visa() {
               <a
                 href={individualWhatsappUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-emerald inline-flex items-center gap-2 px-6 py-3 rounded-full font-body font-bold text-sm"
               >
                 Apply for Individual Visa <ArrowIcon />
@@ -194,7 +194,7 @@ export default function Visa() {
               <a
                 href={iqamaWhatsappUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="btn-gold inline-flex items-center gap-2 px-6 py-3 rounded-full font-body font-bold text-sm"
               >
                 Apply with Iqama <ArrowIcon />
@@ -373,7 +373,7 @@ export default function Visa() {
             className="refresh-button refresh-button-gold"
             href={visaWhatsappUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             Chat on WhatsApp
           </a>
